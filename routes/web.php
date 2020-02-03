@@ -11,6 +11,11 @@
 |
 */
 
+use Illuminate\Support\Facades\DB;
+
 Route::get('/', function () {
     return view('welcome');
+});
+Route::get('/db/test', function () {
+    dd(DB::table('test')->get());
 });
