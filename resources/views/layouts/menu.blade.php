@@ -67,16 +67,16 @@
                     </li>
                     @if(Auth::check())
                         <li class="nav-item">
-                            <a href="/dashbord" class="nav-link border border-light rounded"
+                            <a href="/home" class="nav-link border border-light rounded"
                                target="_blank">
                                 <i class="fas fa-user mr-2"></i>{{Auth::user()->name}}
                             </a>
                         </li>
-                        <li class="nav-item ml-1">
+                        <li class="nav-item ml-3">
                             <a href="{{ route('logout') }}" class="nav-link border border-light rounded"
                                target="_blank"  onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                <i class="fas fa-sign-out mr-2"></i>Déconnexion
+                                <i class="fas fa-sign-out-alt mr-2"></i>Déconnexion
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                     @csrf
                                 </form>
