@@ -19,14 +19,14 @@ class LogController extends Controller
     }
 
     public function create($type) {
-        return ($type > 2 ? view('logs.create.batiment') : view('logs.create.equipement'));
+        return $type == "batiment" ? view('logs.create.batiment') : view('logs.create.equipement');
     }
 
     public function store()
     {
         $data = request()->validate([
             'nom' => 'required',
-            'reference' => 'required',
+            'reference_id' => 'required',
             'type_reference' => 'required|in:batiment,equipement',
             'valeur' => 'required',
             'consommation' => 'required'
@@ -41,35 +41,39 @@ class LogController extends Controller
 
     public function show(Log $log)
     {
-        return view('log.show', [
-            'log' => $log
-        ]);
+        $data = ["log" => $log];
+
+        return $log['type_reference'] == "batiment" ? view('logs.show.batiment', $data) : view('logs.show.equipement', $data);
     }
 
-    public function edit(Batiment $batiment)
+    public function edit(Log $log)
     {
-        return view('batiments.edit', compact('batiment'));
+        $data = ["log" => $log];
+
+        return $log['type_reference'] == "batiment" ? view('logs.edit.batiment', $data) : view('logs.edit.equipement', $data);
     }
 
-    public function update(Batiment $batiment)
+    public function update(Log $log)
     {
         $data = request()->$this->validate([
             'nom' => 'required',
-            'description' => '',
-            'geolocalisation' => ''
+            'reference_id' => 'required',
+            'type_reference' => 'required|in:batiment,equipement',
+            'valeur' => 'required',
+            'consommation' => 'required'
         ]);
 
         dd($data);
 
-        $batiment->update($data);
+        $log->update($data);
 
-        return redirect("/batiments/{$batiment->id}");
+        return $log['type_reference'] == "batiment" ? view('logs.show.batiment', $data) : view('logs.show.equipement', $data);
     }
 
-    public function destroy(Batiment $batiment)
+    public function destroy(Log $log)
     {
-        $batiment->delete();
+        $log->delete();
 
-        return redirect()->route('batiments.index');
+        return redirect()->route('logs.index');
     }
 }
