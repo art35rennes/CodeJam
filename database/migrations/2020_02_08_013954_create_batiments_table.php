@@ -19,8 +19,8 @@ class CreateBatimentsTable extends Migration
             $table->foreign('user_id')->references('id')->on('users');
             $table->string('nom');
             $table->unique(['user_id', 'nom'], 'signature');
-            $table->text('description');
-            $table->string('geolocalisation');
+            $table->text('description')->nullable();
+            $table->string('geolocalisation')->nullable();
             $table->timestamps();
             $table->engine = 'InnoDB';
         });

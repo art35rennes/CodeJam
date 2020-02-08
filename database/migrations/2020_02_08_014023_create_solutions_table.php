@@ -18,7 +18,7 @@ class CreateSolutionsTable extends Migration
             $table->unsignedBigInteger('probleme_id');
             $table->foreign('probleme_id')->references('id')->on('problemes');
             $table->string('nom');
-            $table->text('description');
+            $table->text('description')->nullable();
             $table->string('media')->nullable();
             $table->timestamps();
             $table->engine = 'InnoDB';
