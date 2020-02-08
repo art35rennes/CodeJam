@@ -36,16 +36,17 @@
             <!-- Side navigation links -->
             <li>
                 <ul class="collapsible collapsible-accordion">
-                    <li><a class="collapsible-header waves-effect arrow-r active"><i class="sv-slim-icon fas fa-chevron-right"></i> Submit blog<i class="fas fa-angle-down rotate-icon"></i></a>
+                    <li><a class="collapsible-header waves-effect arrow-r active"><i class="sv-slim-icon fas fa-tachometer-alt"></i> Accueil<i class="fas fa-angle-down rotate-icon"></i></a>
                         <div class="collapsible-body">
                             <ul>
-                                <li><a href="#" class="waves-effect active">
-                                        <span class="sv-slim"> SL </span>
-                                        <span class="sv-normal">Submit listing</span></a>
+                                <li><a href="/home#recap" class="waves-effect">
+                                        <span class="sv-normal">Récapitulatif</span></a>
                                 </li>
-                                <li><a href="#" class="waves-effect">
-                                        <span class="sv-slim"> RF </span>
-                                        <span class="sv-normal">Registration form</span></a>
+                                <li><a href="/home#installations" class="waves-effect">
+                                        <span class="sv-normal">Installations</span></a>
+                                </li>
+                                <li><a href="/home#batiments" class="waves-effect">
+                                        <span class="sv-normal">Batiments</span></a>
                                 </li>
                             </ul>
                         </div>
@@ -111,25 +112,35 @@
         </div>
         <ul class="nav navbar-nav nav-flex-icons ml-auto">
             <li class="nav-item">
-                <a class="nav-link"><i class="fas fa-envelope"></i> <span class="clearfix d-none d-sm-inline-block">Contact</span></a>
+                <a class="nav-link" href="mailto:arthur.sicard@outlook.fr?subject=CodeJam%20EarthQuake"><i class="fas fa-envelope"></i> <span class="clearfix d-none d-sm-inline-block">Contact</span></a>
             </li>
+{{--            <li class="nav-item">--}}
+{{--                <a class="nav-link"><i class="fas fa-comments"></i> <span class="clearfix d-none d-sm-inline-block">Support</span></a>--}}
+{{--            </li>--}}
+{{--            <li class="nav-item">--}}
+{{--                <a class="nav-link"><i class="fas fa-user"></i> <span class="clearfix d-none d-sm-inline-block">Account</span></a>--}}
+{{--            </li>--}}
             <li class="nav-item">
-                <a class="nav-link"><i class="fas fa-comments"></i> <span class="clearfix d-none d-sm-inline-block">Support</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link"><i class="fas fa-user"></i> <span class="clearfix d-none d-sm-inline-block">Account</span></a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                   aria-haspopup="true" aria-expanded="false">
-                    Dropdown
+                <a href="{{ route('logout') }}" class="nav-link"
+                   target="_blank"  onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                    <i class="fas fa-sign-out-alt"></i>Déconnexion
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
                 </a>
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                </div>
             </li>
+{{--            <li class="nav-item dropdown">--}}
+{{--                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"--}}
+{{--                   aria-haspopup="true" aria-expanded="false">--}}
+{{--                    Dropdown--}}
+{{--                </a>--}}
+{{--                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">--}}
+{{--                    <a class="dropdown-item" href="#">Action</a>--}}
+{{--                    <a class="dropdown-item" href="#">Another action</a>--}}
+{{--                    <a class="dropdown-item" href="#">Something else here</a>--}}
+{{--                </div>--}}
+{{--            </li>--}}
         </ul>
     </nav>
     <!-- /.Navbar -->

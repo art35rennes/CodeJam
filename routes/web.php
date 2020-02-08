@@ -20,7 +20,7 @@ Route::get('/db/test', function () {
     dd(DB::table('test')->get());
 });
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->name('home');
 

@@ -67,7 +67,7 @@ $(function () {
     };
 
     //line
-    var ctxL1 = document.getElementById("batiments").getContext('2d');
+    var ctxL1 = document.getElementById("batiment").getContext('2d');
     var myLineChart1 = new Chart(ctxL1, {
         type: 'line',
         data: {

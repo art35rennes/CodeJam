@@ -5,7 +5,7 @@
 @section('content')
     <div class="container-fluid mt-1">
         {{--General stat--}}
-        <section>
+        <section id="recap">
             <h4>Récapitulatif</h4>
             <div class="row text-center">
                 @for($i = 0; $i < 4; $i++)
@@ -35,7 +35,7 @@
             </div>
         </section>
         <hr>
-        <section class="mt-2">
+        <section id="installations" class="mt-2">
             <h4>Installations</h4>
             <div class="row">
                 @for($i=0; $i<4; $i++)
@@ -176,8 +176,8 @@
         </section>
 
         <hr>
-        <section class="mt-2">
-
+        <section id="batiments" class="mt-2">
+            <h4>Batiments</h4>
                 @for($i=0; $i<2; $i++)
                     <div class="mb-3">
                         <!-- Title -->
@@ -189,7 +189,7 @@
 
                             <!-- Card image -->
                             <div class="view view-cascade gradient-card-header blue-gradient">
-                                <canvas id="batiments"  class="chartjs-render-monitor" ></canvas>
+                                <canvas id="batiment"  class="chartjs-render-monitor" ></canvas>
                             </div>
                             <!-- Card image -->
 
