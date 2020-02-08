@@ -2,18 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3605c319-9d51-41e8-8580-ba638f03cee4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/auth/login.old.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/auth/register.old.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/menu.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/CodeJam.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/CodeJam.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/menu.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Batiment.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Batiment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BatimentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BatimentController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/InstallationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/InstallationController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProblemeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProblemeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SolutionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SolutionController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Log.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Log.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Probleme.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Probleme.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_02_08_013954_create_batiments_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_02_08_013954_create_batiments_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_02_08_014009_create_problemes_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_02_08_014009_create_problemes_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_02_08_014023_create_solutions_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_02_08_014023_create_solutions_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_02_08_014042_create_installations_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_02_08_014042_create_installations_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -118,11 +123,20 @@
       <path value="$PROJECT_DIR$/vendor/phpunit/php-token-stream" />
       <path value="$PROJECT_DIR$/vendor/league/commonmark" />
       <path value="$PROJECT_DIR$/vendor/laravel/ui" />
+      <path value="$PROJECT_DIR$/vendor/moontoast/math" />
+      <path value="$PROJECT_DIR$/vendor/laravel/telescope" />
+      <path value="$PROJECT_DIR$/vendor/phpseclib/bcmath_compat" />
+      <path value="$PROJECT_DIR$/vendor/phpseclib/phpseclib" />
     </include_path>
   </component>
   <component name="ProjectId" id="1XJFefz4YJsG5478vcwLBx6Xq9s" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -146,18 +160,6 @@
       <recent name="D:\Users\Arthur\Documents\GitHub\CodeJam\public" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
@@ -177,6 +179,8 @@
       <workItem from="1580756388087" duration="1993000" />
       <workItem from="1580839569848" duration="145000" />
       <workItem from="1581108533427" duration="10621000" />
+      <workItem from="1581175891780" duration="1358000" />
+      <workItem from="1581177273470" duration="5649000" />
     </task>
     <servers />
   </component>
@@ -195,5 +199,19 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="693" y="271" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1581181595968">
+      <screen x="0" y="27" width="1920" height="1002" />
+    </state>
+    <state x="693" y="271" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.27.1920.1002@0.27.1920.1002" timestamp="1581181595968" />
+    <state x="624" y="233" key="run.anything.popup" timestamp="1581176943315">
+      <screen x="0" y="27" width="1920" height="1002" />
+    </state>
+    <state x="624" y="233" key="run.anything.popup/0.27.1920.1002@0.27.1920.1002" timestamp="1581176943315" />
+    <state x="623" y="224" width="672" height="678" key="search.everywhere.popup" timestamp="1581181585445">
+      <screen x="0" y="27" width="1920" height="1002" />
+    </state>
+    <state x="623" y="224" width="672" height="678" key="search.everywhere.popup/0.27.1920.1002@0.27.1920.1002" timestamp="1581181585445" />
   </component>
 </project>

@@ -19,7 +19,7 @@ class CreateInstallationsTable extends Migration
             $table->foreign('batiment_id')->references('id')->on('batiments');
             $table->string('nom');
             $table->unique(['batiment_id', 'nom'], 'signature');
-            $table->text('description');
+            $table->text('description')->nullable();
             $table->timestamps();
             $table->engine = 'InnoDB';
         });

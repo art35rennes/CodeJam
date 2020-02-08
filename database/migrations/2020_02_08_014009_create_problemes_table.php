@@ -16,7 +16,7 @@ class CreateProblemesTable extends Migration
         Schema::create('problemes', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nom');
-            $table->text('description');
+            $table->text('description')->nullable();
             $table->string('equipement');
             $table->string('media')->nullable();
             $table->timestamps();
