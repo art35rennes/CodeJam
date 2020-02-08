@@ -27,8 +27,8 @@
             <div class="container">
 
                 <!-- Brand -->
-                <a class="navbar-brand" href="https://mdbootstrap.com/docs/jquery/" target="_blank">
-                    <strong>MDB</strong>
+                <a class="navbar-brand" href="#">
+                    <strong>Earthquake</strong>
                 </a>
 
                 <!-- Collapse -->
@@ -43,43 +43,32 @@
                     <!-- Left -->
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">
-                            <a class="nav-link" href="#">Home
+                            <a class="nav-link" href="#">Accueil
                                 <span class="sr-only">(current)</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="https://mdbootstrap.com/docs/jquery/" target="_blank">About MDB</a>
+                            <a class="nav-link" href="#">A propos du projet</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="https://mdbootstrap.com/docs/jquery/getting-started/download/" target="_blank">Free
-                                download</a>
+                            <a class="nav-link" href=https://github.com/art35rennes/CodeJam/archive/master.zip" target="_blank">Télécharger</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="https://mdbootstrap.com/education/bootstrap/" target="_blank">Free tutorials</a>
+                            <a class="nav-link" href="https://github.com/art35rennes/CodeJam/blob/master/README.md" target="_blank">Tutorial</a>
                         </li>
                     </ul>
 
                     <!-- Right -->
                     <ul class="navbar-nav nav-flex-icons">
                         <li class="nav-item">
-                            <a href="https://www.facebook.com/mdbootstrap" class="nav-link" target="_blank">
-                                <i class="fab fa-facebook-f"></i>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="https://twitter.com/MDBootstrap" class="nav-link" target="_blank">
-                                <i class="fab fa-twitter"></i>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="https://github.com/mdbootstrap/bootstrap-material-design" class="nav-link" target="_blank">
+                            <a href="https://github.com/art35rennes/CodeJam" class="nav-link" target="_blank">
                                 <i class="fab fa-github mr-2"></i>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="https://github.com/mdbootstrap/bootstrap-material-design" class="nav-link border border-light rounded"
+                            <a href="{{ route('login') }}"
                                target="_blank">
-                                <i class="fas fa-user mr-2"></i>Sing Up
+                                <i class="fas fa-user mr-2"></i>Connexion
                             </a>
                         </li>
                     </ul>
@@ -110,7 +99,7 @@
                         <!--Grid column-->
                         <div class="col-md-6 mb-4 white-text text-center text-md-left">
 
-                            <h1 class="display-4 font-weight-bold">Learn Bootstrap 4 with MDB</h1>
+                            <h1 class="display-4 font-weight-bold">Controller lieux votre prodution d'energie et votre impact sur l'environement</h1>
 
                             <hr class="hr-light">
 

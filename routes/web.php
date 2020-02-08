@@ -19,3 +19,7 @@ Route::get('/', function () {
 Route::get('/db/test', function () {
     dd(DB::table('test')->get());
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
