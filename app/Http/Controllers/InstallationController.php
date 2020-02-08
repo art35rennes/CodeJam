@@ -43,16 +43,35 @@ class InstallationController extends Controller
 
     public function store(Batiment $batiment)
     {
-        $data = request()->validate([
-            'nom' => 'required',
-            'description' => ''
-        ]);
+        if(Batiment::find($batiment)) {
+            $data = request()->validate([
+                'nom' => 'required',
+                'description' => ''
+            ]);
 
-        dd($data);
+            dd($data);
 
-        $batiment->installations()->create($data);
+            $batiment->installations()->create($data);
 
-        return view('installations.index');
+            return view('installations.index');
+        } else {
+
+            $data = request()->validate([
+                'nom' => 'required',
+                'description' => ''
+            ]);
+
+            dd($data);
+
+            $inserted = auth()->user()->dernierBatiment()->installations()->create($data);
+
+            return response()->json([
+                "success" => true,
+                "id" => $inserted
+            ], 200);
+        }
+
+
     }
 
     public function show(Batiment $batiment, Installation $installation)

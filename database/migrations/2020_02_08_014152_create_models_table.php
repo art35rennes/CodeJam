@@ -24,7 +24,7 @@ class CreateModelsTable extends Migration
             $table->float('poids')->nullable();
             $table->float('rendement')->nullable();
             $table->string('equipement');
-            $table->boolean('certifie');
+            $table->boolean('certifie')->default(false);
             $table->timestamps();
             $table->engine = 'InnoDB';
         });

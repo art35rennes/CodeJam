@@ -39,7 +39,7 @@ Route::delete('/batiments/{batiment}', 'BatimentController@destroy')->name('bati
 Route::get('/installations', 'InstallationController@list')->name('installations.list');
 Route::get('/batiments/{batiment}/installations', 'InstallationController@index')->name('installations.index');
 Route::get('/batiments/{batiment}/installations/create', 'InstallationController@create')->name('installations.create');
-Route::post('/batiments/{batiment}/installations', 'InstallationController@store')->name('installations.store');
+Route::post('/batiments/installations/{batiment}', 'InstallationController@store')->name('installations.store');
 Route::get('/batiments/{batiment}/installations/{installation}', 'InstallationController@show')->name('installations.show');
 Route::get('/batiments/{batiment}/installations/{installation}/edit', 'InstallationController@edit')->name('installations.edit');
 Route::patch('/batiments/{batiment}/installations/{installation}', 'InstallationController@update')->name('installations.update');
@@ -63,11 +63,21 @@ Route::get('/problemes/{probleme}/solutions/{solution}/edit', 'SolutionControlle
 Route::patch('/problemes/{probleme}/solutions/{solution}', 'SolutionController@update')->name('solutions.update');
 Route::delete('/problemes/{probleme}/solutions/{solution}', 'SolutionController@destroy')->name('solutions.destroy');
 
+//Model
+Route::get('/models', 'ModelController@index')->name('models.index');
+Route::get('/models/create', 'ModelController@create')->name('models.create');
+Route::post('/models', 'ModelController@store')->name('models.store');
+Route::get('/models/{model}', 'ModelController@show')->name('models.show');
+Route::get('/models/{model}/edit', 'ModelController@edit')->name('models.edit');
+Route::patch('/models/{model}', 'ModelController@update')->name('models.update');
+Route::delete('/models/{model}', 'ModelController@destroy')->name('models.destroy');
+
 //Logs
-Route::get('/logs', 'BatimentController@index')->name('logs.index');
-Route::get('/logs/create/{type}', 'BatimentController@create')->where('type', 'batiment|equipement')->name('logs.create');
-Route::post('/logs/', 'BatimentController@store')->name('logs.store');
-Route::get('/logs/{log}', 'BatimentController@show')->name('logs.show');
-Route::get('/logs/{log}/edit', 'BatimentController@edit')->name('logs.edit');
-Route::patch('/logs/{log}', 'BatimentController@update')->name('logs.update');
-Route::delete('/logs/{log}', 'BatimentController@destroy')->name('logs.destroy');
+Route::get('/logs', 'LogController@index')->name('logs.index');
+Route::get('/logs/create/{type}', 'LogController@create')->where('type', 'batiment|equipement')->name('logs.create');
+Route::post('/logs/', 'LogController@store')->name('logs.store');
+Route::get('/logs/{log}', 'LogController@show')->name('logs.show');
+Route::get('/logs/{log}/edit', 'LogController@edit')->name('logs.edit');
+Route::patch('/logs/{log}', 'LogController@update')->name('logs.update');
+Route::delete('/logs/{log}', 'LogController@destroy')->name('logs.destroy');
+

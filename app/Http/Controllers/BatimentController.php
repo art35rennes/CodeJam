@@ -32,9 +32,15 @@ class BatimentController extends Controller
 
         dd($data);
 
-        auth()->user()->batiments()->create($data);
-
-        return view('batiments.index');
+        if(auth()->user()->batiments()->create($data)) {
+            return response()->json([
+                "success" => true
+            ], 200);
+        } else {
+            return response()->json([
+                "success" => true
+            ], 500);
+        }
     }
 
     public function show(Batiment $batiment)
