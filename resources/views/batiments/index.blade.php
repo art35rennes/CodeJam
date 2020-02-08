@@ -4,18 +4,20 @@
     - Liste de vos batiments
 @endsection
 @section('content')
-    <table class="mdDataTable">
+    <table class="mdDataTable table w-100">
         <thead>
-        @foreach($batiments as $key=>$value)
-            <th class="th-sm">{{$key}}</th>
-        @endforeach
+        <th>ID</th>
+        <th>Nom</th>
+        <th>Description</th>
+        <th>Geolocalisation</th>
+        <th>Ajouté&nbsp;le</th>
         <th>&nbsp;</th>
         </thead>
         <tbody>
         @foreach($batiments as $batiment)
             <td>{{$batiment->id}}</td>
             <td>{{$batiment->nom}}</td>
-            <td>{{$batiment->description}}</td>
+            <td class="text-truncate">{{$batiment->description}}</td>
             <td>{{$batiment->geolocalisation}}</td>
             <td>{{$batiment->created_at}}</td>
             <td></td>
