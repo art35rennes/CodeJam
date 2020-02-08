@@ -33,12 +33,18 @@ class SolutionController extends Controller
 
     public function show(Probleme $probleme, Solution $solution)
     {
-        return view('solutions.show', compact(['probleme', 'solution']));
+        return view('solutions.show', [
+            'probleme' => $probleme,
+            'solution' => $solution
+        ]);
     }
 
     public function edit(Probleme $probleme, Solution $solution)
     {
-        return view('solutions.edit', compact(['probleme', 'solution']));
+        return view('solutions.edit', [
+            'probleme' => $probleme,
+            'solution' => $solution
+        ]);
     }
 
     public function update(Probleme $probleme, Solution $solution)

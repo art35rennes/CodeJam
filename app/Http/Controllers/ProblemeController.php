@@ -8,7 +8,9 @@ class ProblemeController extends Controller
 {
     public function index()
     {
-        return view('problemes.index', compact(Probleme::all()));
+        return view('problemes.index', [
+            "problemes" => Probleme::all()
+        ]);
     }
 
     public function create() {
@@ -33,12 +35,16 @@ class ProblemeController extends Controller
 
     public function show(Probleme $probleme)
     {
-        return view('problemes.show', compact('probleme'));
+        return view('problemes.show', [
+            'probleme' => $probleme
+        ]);
     }
 
     public function edit(Probleme $probleme)
     {
-        return view('problemes.edit', compact('probleme'));
+        return view('problemes.edit', [
+            'probleme' => $probleme
+        ]);
     }
 
     public function update(Probleme $probleme)

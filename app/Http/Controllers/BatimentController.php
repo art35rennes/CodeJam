@@ -39,12 +39,16 @@ class BatimentController extends Controller
 
     public function show(Batiment $batiment)
     {
-        return view('batiments.show', compact('batiment'));
+        return view('batiments.show', [
+            'batiment' => $batiment
+        ]);
     }
 
     public function edit(Batiment $batiment)
     {
-        return view('batiments.edit', compact('batiment'));
+        return view('batiments.edit', [
+            'batiment' => $batiment
+        ]);
     }
 
     public function update(Batiment $batiment)

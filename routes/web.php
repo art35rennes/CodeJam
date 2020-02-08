@@ -11,7 +11,9 @@
 |
 */
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
@@ -34,6 +36,7 @@ Route::patch('/batiments/{batiment}', 'BatimentController@update')->name('batime
 Route::delete('/batiments/{batiment}', 'BatimentController@destroy')->name('batiments.destroy');
 
 //Installation
+Route::get('/installations', 'InstallationController@list')->name('installations.list');
 Route::get('/batiments/{batiment}/installations', 'InstallationController@index')->name('installations.index');
 Route::get('/batiments/{batiment}/installations/create', 'InstallationController@create')->name('installations.create');
 Route::post('/batiments/{batiment}/installations', 'InstallationController@store')->name('installations.store');
@@ -59,3 +62,12 @@ Route::get('/problemes/{probleme}/solutions/{solution}', 'SolutionController@sho
 Route::get('/problemes/{probleme}/solutions/{solution}/edit', 'SolutionController@edit')->name('solutions.edit');
 Route::patch('/problemes/{probleme}/solutions/{solution}', 'SolutionController@update')->name('solutions.update');
 Route::delete('/problemes/{probleme}/solutions/{solution}', 'SolutionController@destroy')->name('solutions.destroy');
+
+//Logs
+Route::get('/logs', 'BatimentController@index')->name('logs.index');
+Route::get('/logs/create/{type}', 'BatimentController@create')->where('type', 'batiment|equipement')->name('logs.create');
+Route::post('/logs/', 'BatimentController@store')->name('logs.store');
+Route::get('/logs/{log}', 'BatimentController@show')->name('logs.show');
+Route::get('/logs/{log}/edit', 'BatimentController@edit')->name('logs.edit');
+Route::patch('/logs/{log}', 'BatimentController@update')->name('logs.update');
+Route::delete('/logs/{log}', 'BatimentController@destroy')->name('logs.destroy');

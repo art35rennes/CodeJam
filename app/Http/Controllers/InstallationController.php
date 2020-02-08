@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Batiment;
 use App\Installation;
+use Illuminate\Support\Facades\DB;
 
 class InstallationController extends Controller
 {
@@ -12,9 +13,28 @@ class InstallationController extends Controller
         $this->middleware('auth');
     }
 
+    public function list()
+    {
+        $list = DB::table('equipements')
+            ->select('installations.id', 'installations.nom', 'batiments.nom as batiment', DB::raw('count(equipements.model_id) as equipements'))
+            ->leftJoin('installations', 'installations.id', '=' , 'equipements.installation_id')
+            ->leftJoin('batiments', 'batiments.id', '=', 'installations.batiment_id')
+            ->where('batiments.user_id', '=', auth()->user()->id)
+            ->groupBy('installations.id')
+            ->get();
+
+        dd($list);
+
+        return view('installations.list', [
+            "installations" => $list
+        ]);
+    }
+
     public function index(Batiment $batiment)
     {
-        return view('installations.index', compact($batiment->installations()));
+        return view('installations.index', [
+            "installations" => $batiment->installations()
+        ]);
     }
 
     public function create() {
@@ -37,12 +57,17 @@ class InstallationController extends Controller
 
     public function show(Batiment $batiment, Installation $installation)
     {
-        return view('installations.show', compact(['batiment','installation']));
+        return view('installations.show', [
+            'batiment' => $batiment,
+            'installation' => $installation]);
     }
 
     public function edit(Batiment $batiment, Installation $installation)
     {
-        return view('installations.edit', compact(['batiment','installation']));
+        return view('installations.edit', [
+            'batiment' => $batiment,
+            'installation' => $installation
+        ]);
     }
 
     public function update(Batiment $batiment, Installation $installation)
