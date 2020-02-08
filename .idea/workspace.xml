@@ -116,10 +116,7 @@
       <path value="$PROJECT_DIR$/vendor/league/commonmark-ext-table" />
       <path value="$PROJECT_DIR$/vendor/phpunit/php-token-stream" />
       <path value="$PROJECT_DIR$/vendor/league/commonmark" />
-      <path value="$PROJECT_DIR$/vendor/moontoast/math" />
-      <path value="$PROJECT_DIR$/vendor/laravel/telescope" />
-      <path value="$PROJECT_DIR$/vendor/phpseclib/bcmath_compat" />
-      <path value="$PROJECT_DIR$/vendor/phpseclib/phpseclib" />
+      <path value="$PROJECT_DIR$/vendor/laravel/ui" />
     </include_path>
   </component>
   <component name="ProjectId" id="1XJFefz4YJsG5478vcwLBx6Xq9s" />
@@ -164,7 +161,7 @@
       <updated>1580756386776</updated>
       <workItem from="1580756388087" duration="1993000" />
       <workItem from="1580839569848" duration="145000" />
-      <workItem from="1581108533427" duration="2880000" />
+      <workItem from="1581108533427" duration="3846000" />
     </task>
     <servers />
   </component>
