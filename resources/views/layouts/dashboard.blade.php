@@ -36,7 +36,7 @@
             <!-- Side navigation links -->
             <li>
                 <ul class="collapsible collapsible-accordion">
-                    <li><a class="collapsible-header waves-effect arrow-r active"><i class="sv-slim-icon fas fa-tachometer-alt"></i> Accueil<i class="fas fa-angle-down rotate-icon"></i></a>
+                    <li><a class="collapsible-header waves-effect arrow-r active"><i class="sv-slim-icon fas fa-tachometer-alt"></i> Dashboard<i class="fas fa-angle-down rotate-icon"></i></a>
                         <div class="collapsible-body">
                             <ul>
                                 <li><a href="/home#recap" class="waves-effect">
@@ -51,17 +51,18 @@
                             </ul>
                         </div>
                     </li>
-                    <li><a class="collapsible-header waves-effect arrow-r"><i class="sv-slim-icon far fa-hand-point-right"></i> Instruction<i class="fas fa-angle-down rotate-icon"></i></a>
+                    <li><a class="collapsible-header waves-effect arrow-r"><i class="sv-slim-icon far fa-hand-point-right"></i> Installations<i class="fas fa-angle-down rotate-icon"></i></a>
                         <div class="collapsible-body">
                             <ul>
-                                <li><a href="#" class="waves-effect">
-                                        <span class="sv-slim"> FB </span>
-                                        <span class="sv-normal">For bloggers</span></a>
+                                <li><a href="{{ route('batiments.index') }}" class="waves-effect">
+                                        <span class="sv-normal">Batiments</span></a>
                                 </li>
-                                <li><a href="#" class="waves-effect">
-                                        <span class="sv-slim"> FA </span>
-                                        <span class="sv-normal">For authors</span></a>
-                                </li>
+{{--                                <li><a href="{{ route('installations.index',) }}" class="waves-effect">--}}
+{{--                                        <span class="sv-normal">Installations</span></a>--}}
+{{--                                </li>--}}
+{{--                                <li><a href="{{ route('equipements.index') }}" class="waves-effect">--}}
+{{--                                        <span class="sv-normal">Equipements</span></a>--}}
+{{--                                </li>--}}
                             </ul>
                         </div>
                     </li>
