@@ -20,7 +20,7 @@
                     <!--Grid column-->
                     <div class="col-md-6 mb-4 white-text text-center text-md-left">
 
-                        <h1 class="display-4 font-weight-bold ">Optimiser votre prodution d'energie.<br><span class="">Reduiser votre impact sur l'environement</span></h1>
+                        <h1 class="display-4 font-weight-bold ">Optimisez votre prodution d'energie.<br><span class="">Reduisez votre impact sur l'environement.</span></h1>
 
                         <hr class="hr-light">
 
@@ -29,7 +29,7 @@
                         </p>
 
                         <p class="mb-4 d-none d-md-block">
-                            <strong>L'impact sur la biodiversité de l'installation d'équipements de la production d'énergie renouvlable est bien souvent négliger, découvrer les enjeux et comment adapter vos pratiques</strong>
+                            <strong>L'impact sur la biodiversité de l'installation d'équipements de la production d'énergie renouvelable est bien souvent négligée, découvrez les enjeux et comment adapter vos pratiques.</strong>
                         </p>
 
                         <a target="_blank" href="http://bl-evolution.com/energies-renouvelables-impacts-biodiversite/" class="btn btn-outline-white">En savoir plus sur les enjeux
@@ -139,7 +139,7 @@
                         </div>
                         <div class="col-10">
                             <h5 class="feature-title">Monitoring</h5>
-                            <p class="grey-text">Suivez en temps réel votre production et votre consomation d'energie pour adapter vos usages et <span class="font-weight-bold">reduire vos factures.</span></p>
+                            <p class="grey-text">Suivez en temps réel votre production et votre consommation d'énergie pour adapter vos usages et <span class="font-weight-bold">reduire vos factures.</span></p>
                         </div>
                     </div>
                     <!--/First row-->
@@ -153,7 +153,7 @@
                         </div>
                         <div class="col-10">
                             <h5 class="feature-title">Anticipez le futur</h5>
-                            <p class="grey-text">Earthquake vous fournis tout les outils pour <span class="font-weight-bold">améliorer vos installations</span> au cours du temps.
+                            <p class="grey-text">Earthquake vous fournis tous les outils pour <span class="font-weight-bold">améliorer vos installations</span> au cours du temps.
                             </p>
                         </div>
                     </div>
@@ -168,7 +168,7 @@
                         </div>
                         <div class="col-10">
                             <h5 class="feature-title">Préservez la biodiversité chez vous</h5>
-                            <p class="grey-text">Nos outils d'analyse avancée sont capable de <span class="font-weight-bold">définir l'impact de vos équipements</span> sur la biodiversité local et <span class="font-weight-bold">vous proposez des solutions adaptées</span> à votre situation pour maintenir la biodversité dans votre environement</p>
+                            <p class="grey-text">Nos outils d'analyse avancée sont capable de <span class="font-weight-bold">définir l'impact de vos équipements</span> sur la biodiversité locale et de <span class="font-weight-bold">vous proposer des solutions adaptées</span> à votre situation pour maintenir la biodversité dans votre environemment.</p>
                         </div>
                     </div>
                     <!--/Third row-->

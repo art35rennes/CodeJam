@@ -13,6 +13,7 @@
       <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,6 +24,14 @@
     <execution>
       <executable />
     </execution>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -121,25 +130,33 @@
       <path value="$PROJECT_DIR$/vendor/laravel/telescope" />
       <path value="$PROJECT_DIR$/vendor/phpseclib/bcmath_compat" />
       <path value="$PROJECT_DIR$/vendor/phpseclib/phpseclib" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/promises" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/guzzle" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/vendor/ralouphie/getallheaders" />
     </include_path>
   </component>
   <component name="ProjectId" id="1XJFefz4YJsG5478vcwLBx6Xq9s" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
-  <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
-    <option name="showLibraryContents" value="true" />
-  </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Blade" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/auth" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Users\Arthur\Documents\GitHub\CodeJam\resources\views\auth" />
+      <recent name="D:\Users\Arthur\Documents\GitHub\CodeJam\resources\lang" />
+      <recent name="D:\Users\Arthur\Documents\GitHub\CodeJam\resources\views" />
+      <recent name="D:\Users\Arthur\Documents\GitHub\CodeJam\public" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Users\Arthur\Documents\GitHub\CodeJam\resources\views\layouts" />
       <recent name="D:\Users\Arthur\Documents\GitHub\CodeJam\public\css" />
@@ -147,12 +164,18 @@
       <recent name="D:\Users\Arthur\Documents\GitHub\CodeJam\public\MDB\img\svg" />
       <recent name="D:\Users\Arthur\Documents\GitHub\CodeJam\public\MDB" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Users\Arthur\Documents\GitHub\CodeJam\resources\views\auth" />
-      <recent name="D:\Users\Arthur\Documents\GitHub\CodeJam\resources\lang" />
-      <recent name="D:\Users\Arthur\Documents\GitHub\CodeJam\resources\views" />
-      <recent name="D:\Users\Arthur\Documents\GitHub\CodeJam\public" />
-    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
   </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -172,9 +195,14 @@
       <updated>1580756386776</updated>
       <workItem from="1580756388087" duration="1993000" />
       <workItem from="1580839569848" duration="145000" />
+<<<<<<< HEAD
       <workItem from="1581108533427" duration="10621000" />
       <workItem from="1581175891780" duration="1358000" />
       <workItem from="1581177273470" duration="10290000" />
+=======
+      <workItem from="1581108533427" duration="11014000" />
+      <workItem from="1581134389766" duration="18795000" />
+>>>>>>> f03d719fd51cb3f19c86adc62853499498391d12
     </task>
     <servers />
   </component>
@@ -194,6 +222,7 @@
       </map>
     </option>
   </component>
+<<<<<<< HEAD
   <component name="WindowStateProjectService">
     <state x="693" y="271" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1581183718809">
       <screen x="0" y="27" width="1920" height="1002" />
@@ -208,4 +237,6 @@
     </state>
     <state x="623" y="224" width="672" height="678" key="search.everywhere.popup/0.27.1920.1002@0.27.1920.1002" timestamp="1581189302449" />
   </component>
+=======
+>>>>>>> f03d719fd51cb3f19c86adc62853499498391d12
 </project>

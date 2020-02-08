@@ -13,7 +13,9 @@ class BatimentController extends Controller
 
     public function index()
     {
-        return view('batiments.index', compact(Batiment::find(auth()->user())));
+        return view('batiments.index', [
+            "batiments" => Batiment::find(auth()->user()),
+        ]);
     }
 
     public function create() {
