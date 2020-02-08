@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateInstallationsSolutionsTable extends Migration
+class CreatesInstallationSolutionPivotTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,14 @@ class CreateInstallationsSolutionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('installations_solutions', function (Blueprint $table) {
+        Schema::create('installation_solution', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('installation_id');
             $table->unsignedBigInteger('solution_id');
-            $table->foreign('installation_id')->references('id')->on('installations');
-            $table->foreign('solution_id')->references('id')->on('solutions');
-            $table->date('date_solution')->nullable();
+            //$table->foreign('installation_id')->references('id')->on('installations');
+            //$table->foreign('solution_id')->references('id')->on('solutions');
+            //$table->date('date_implemented_solution');
             $table->timestamps();
-            $table->engine = 'InnoDB';
         });
     }
 
@@ -32,6 +31,6 @@ class CreateInstallationsSolutionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('installations_solutions');
+        Schema::dropIfExists('installation_solution');
     }
 }

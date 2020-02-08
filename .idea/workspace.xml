@@ -2,22 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3605c319-9d51-41e8-8580-ba638f03cee4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/CodeJam.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/CodeJam.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Batiment.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Batiment.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BatimentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BatimentController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/InstallationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/InstallationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProblemeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProblemeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SolutionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SolutionController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Log.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Log.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Probleme.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Probleme.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/InstallationSolutionController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Installation.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Installation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Installation_Solution.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Solution.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Solution.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_02_08_013954_create_batiments_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_02_08_013954_create_batiments_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_02_08_014009_create_problemes_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_02_08_014009_create_problemes_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_02_08_014023_create_solutions_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_02_08_014023_create_solutions_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_02_08_014042_create_installations_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_02_08_014042_create_installations_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_02_08_014153_create_installations_solutions_table.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -180,7 +174,7 @@
       <workItem from="1580839569848" duration="145000" />
       <workItem from="1581108533427" duration="10621000" />
       <workItem from="1581175891780" duration="1358000" />
-      <workItem from="1581177273470" duration="5649000" />
+      <workItem from="1581177273470" duration="10290000" />
     </task>
     <servers />
   </component>
@@ -201,17 +195,17 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="693" y="271" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1581181595968">
+    <state x="693" y="271" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1581183718809">
       <screen x="0" y="27" width="1920" height="1002" />
     </state>
-    <state x="693" y="271" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.27.1920.1002@0.27.1920.1002" timestamp="1581181595968" />
+    <state x="693" y="271" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.27.1920.1002@0.27.1920.1002" timestamp="1581183718809" />
     <state x="624" y="233" key="run.anything.popup" timestamp="1581176943315">
       <screen x="0" y="27" width="1920" height="1002" />
     </state>
     <state x="624" y="233" key="run.anything.popup/0.27.1920.1002@0.27.1920.1002" timestamp="1581176943315" />
-    <state x="623" y="224" width="672" height="678" key="search.everywhere.popup" timestamp="1581181585445">
+    <state x="623" y="224" width="672" height="678" key="search.everywhere.popup" timestamp="1581189302449">
       <screen x="0" y="27" width="1920" height="1002" />
     </state>
-    <state x="623" y="224" width="672" height="678" key="search.everywhere.popup/0.27.1920.1002@0.27.1920.1002" timestamp="1581181585445" />
+    <state x="623" y="224" width="672" height="678" key="search.everywhere.popup/0.27.1920.1002@0.27.1920.1002" timestamp="1581189302449" />
   </component>
 </project>

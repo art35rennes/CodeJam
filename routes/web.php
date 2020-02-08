@@ -59,12 +59,3 @@ Route::get('/problemes/{probleme}/solutions/{solution}', 'SolutionController@sho
 Route::get('/problemes/{probleme}/solutions/{solution}/edit', 'SolutionController@edit')->name('solutions.edit');
 Route::patch('/problemes/{probleme}/solutions/{solution}', 'SolutionController@update')->name('solutions.update');
 Route::delete('/problemes/{probleme}/solutions/{solution}', 'SolutionController@destroy')->name('solutions.destroy');
-
-//Installation_Solutions
-Route::get('/problemes/{probleme}/solutions', 'InstallationSolutionController@index')->name('installation_solutions.index');
-Route::get('/problemes/{probleme}/solutions/create', 'InstallationSolutionController@create')->name('installation_solutions.create');
-Route::post('/problemes/{probleme}/solutions', 'InstallationSolutionController@store')->name('installation_solutions.store');
-Route::get('/problemes/{probleme}/solutions/{solution}', 'InstallationSolutionController@show')->name('installation_solutions.show');
-Route::get('/problemes/{probleme}/solutions/{solution}/edit', 'InstallationSolutionController@edit')->name('installation_solutions.edit');
-Route::patch('/problemes/{probleme}/solutions/{solution}', 'InstallationSolutionController@update')->name('installation_solutions.update');
-Route::delete('/problemes/{probleme}/solutions/{solution}', 'InstallationSolutionController@destroy')->name('installation_solutions.destroy');

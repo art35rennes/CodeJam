@@ -14,7 +14,8 @@ class Installation extends Model
         return $this->hasMany(Equipement::class);
     }
 
-    public function installation_solutions() {
-        return $this->hasMany(Installation_Solution::class);
+    public function solutions() {
+        return $this->belongsToMany(Solution::class);
     }
 }
+

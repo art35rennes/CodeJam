@@ -10,7 +10,7 @@ class Solution extends Model
         return $this->belongsTo(Probleme::class);
     }
 
-    public function installation_solutions() {
-        return $this->hasMany(Installation_Solution::class);
+    public function installations() {
+        return $this->belongsToMany(Installation::class);
     }
 }

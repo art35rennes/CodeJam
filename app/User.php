@@ -38,6 +38,6 @@ class User extends Authenticatable
     ];
 
     public function batiments() {
-        return $this->hasMany(Batiment::class, 'user_id');
+        return $this->hasMany(Batiment::class);
     }
 }
