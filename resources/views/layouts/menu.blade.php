@@ -180,7 +180,7 @@
 
 
 <script src="{{URL::asset("/MDB/js/popper.js")}}"></script>
-<script src="{{URL::asset("/js/admin/menu.js")}}"></script>
+<script src="{{URL::asset("/js/menu.js")}}"></script>
 <script src="{{URL::asset("/MDB/js/bootstrap.js")}}"></script>
 
 <script type="text/javascript">

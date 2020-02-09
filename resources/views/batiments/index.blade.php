@@ -20,8 +20,11 @@
             <td class="text-truncate">{{$batiment->description}}</td>
             <td>{{$batiment->geolocalisation}}</td>
             <td>{{$batiment->created_at}}</td>
-            <td></td>
+            <td><i class="fas fa-search"></i></td>
         @endforeach
         </tbody>
     </table>
+
+    <a class="btn blue-gradient" href="{{ route("batiments.create") }}">Ajouter un batiment</a>
+
 @endsection

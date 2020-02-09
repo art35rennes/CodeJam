@@ -1,7 +1,7 @@
 @extends('layouts.dashboard')
 
 @section('page-name')
-    - Liste de vos installations
+    - Ajout d'une installation
 @endsection
 @section('content')
     <form method="POST" action="{{ route('installations.store') }}">
@@ -15,8 +15,8 @@
                     <label for="materialRegisterFormFirstName">Nom</label>
                     @error('nom')
                     <span class="invalid-feed" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
+                        <strong>{{ $message }}</strong>
+                    </span>
                     @enderror
                 </div>
             </div>
@@ -28,8 +28,8 @@
                 <label for="form7">Description <span class="text-muted">(facultatif)</span></label>
                 @error('description')
                 <span class="invalid-feed" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
+                    <strong>{{ $message }}</strong>
+                </span>
                 @enderror
             </div>
         </div>

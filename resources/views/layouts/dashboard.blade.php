@@ -36,7 +36,7 @@
             <!-- Side navigation links -->
             <li>
                 <ul class="collapsible collapsible-accordion">
-                    <li><a class="collapsible-header waves-effect arrow-r active"><i class="sv-slim-icon fas fa-tachometer-alt"></i> Dashboard<i class="fas fa-angle-down rotate-icon"></i></a>
+                    <li><a class="collapsible-header waves-effect arrow-r"><i class="sv-slim-icon fas fa-tachometer-alt"></i> Dashboard<i class="fas fa-angle-down rotate-icon"></i></a>
                         <div class="collapsible-body">
                             <ul>
                                 <li><a href="/home#recap" class="waves-effect">
@@ -51,15 +51,15 @@
                             </ul>
                         </div>
                     </li>
-                    <li><a class="collapsible-header waves-effect arrow-r"><i class="sv-slim-icon far fa-hand-point-right"></i> Installations<i class="fas fa-angle-down rotate-icon"></i></a>
+                    <li><a class="collapsible-header waves-effect arrow-r"><i class="sv-slim-icon fab fa-buffer"></i> Installations<i class="fas fa-angle-down rotate-icon"></i></a>
                         <div class="collapsible-body">
                             <ul>
                                 <li><a href="{{ route('batiments.index') }}" class="waves-effect">
                                         <span class="sv-normal">Batiments</span></a>
                                 </li>
-{{--                                <li><a href="{{ route('installations.index',) }}" class="waves-effect">--}}
-{{--                                        <span class="sv-normal">Installations</span></a>--}}
-{{--                                </li>--}}
+                                <li><a href="{{ route('installations.list') }}" class="waves-effect">
+                                        <span class="sv-normal">Installations</span></a>
+                                </li>
 {{--                                <li><a href="{{ route('equipements.index') }}" class="waves-effect">--}}
 {{--                                        <span class="sv-normal">Equipements</span></a>--}}
 {{--                                </li>--}}
@@ -163,7 +163,8 @@
 <script src="{{URL::asset("/js/utility.js")}}"></script>
 <script type="text/javascript" src="{{URL::asset("MDB\js\addons\datatables.min.js")}}"></script>
 -<script type="text/javascript">
-    $(document).ready(() => {
+    @yield('js-text')
+    $(document).ready(function () {
         // SideNav Initialization
         $(".button-collapse").sideNav();
         new WOW().init();
