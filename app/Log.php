@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Log extends Model
 {
+    protected $guarded = [];
+
     public function equipement() {
         return $this->belongsTo(Equipement::class);
     }

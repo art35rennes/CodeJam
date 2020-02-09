@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Equipement extends Model
 {
+    protected $guarded = [];
+
     public function installation() {
         return $this->belongsTo(Installation::class);
     }

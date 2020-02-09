@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Produit extends Model
 {
+    protected $guarded = [];
+
     public function equipements() {
         return $this->hasMany(Equipement::class);
     }
