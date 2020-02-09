@@ -5,7 +5,8 @@
 @endsection
 
 @section('content')
-    <form method="POST" action="">
+    <form method="POST" action="{{route('equipements.store')}}">
+        @csrf
         <select id="installation_id" class="mr-2 mdb-select md-form col-4" searchable="Rechercher ici.." required name="installation_id">
             <option value="0" disabled selected>Choisissez une installation</option>
             @foreach($installations as $installation)
@@ -13,7 +14,7 @@
             @endforeach
         </select>
         <div class="md-form form-row">
-            <select id="model" class="mr-2 mdb-select md-form" searchable="Rechercher ici.." name="produit" required>
+            <select id="model" class="mr-2 mdb-select md-form" searchable="Rechercher ici.." name="produit_id" required>
                 <option value="0" disabled selected>Choisissez un produit</option>
                 @foreach($produits as $produit)
                     <option value="{{$produit->id}}">{{$produit->marque}} - {{$produit->reference}}</option>
@@ -21,7 +22,7 @@
                 @endforeach
             </select>
             <div id="type_table">
-                <select id="type_table_select" class="mdb-select md-form" searchable="Rechercher ici.." name="table" required>
+                <select id="type_table_select" class="mdb-select md-form" searchable="Rechercher ici.." name="equipement" required>
                     <option value="0" disabled selected>Choisissez un type</option>
                     <option value="1">Panneaux solaires</option>
                     <option value="2">Batteries</option>

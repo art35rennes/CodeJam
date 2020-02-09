@@ -66,16 +66,11 @@
                             </ul>
                         </div>
                     </li>
-                    <li><a class="collapsible-header waves-effect arrow-r"><i class="sv-slim-icon fas fa-eye"></i> About<i class="fas fa-angle-down rotate-icon"></i></a>
+                    <li><a class="collapsible-header waves-effect arrow-r"><i class="sv-slim-icon fas fa-eye"></i> Wiki<i class="fas fa-angle-down rotate-icon"></i></a>
                         <div class="collapsible-body">
                             <ul>
-                                <li><a href="#" class="waves-effect">
-                                        <span class="sv-slim"> I </span>
-                                        <span class="sv-normal">Introduction</span></a>
-                                </li>
-                                <li><a href="#" class="waves-effect">
-                                        <span class="sv-slim"> MM </span>
-                                        <span class="sv-normal">Monthly meetings</span></a>
+                                <li><a href="{{route('problemes.index')}}" class="waves-effect">
+                                        <span class="sv-normal">Problèmes</span></a>
                                 </li>
                             </ul>
                         </div>
