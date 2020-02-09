@@ -89,25 +89,25 @@
                     <h3 class="h3 mb-3">Laravel / MDBootstrap</h3>
                     <p>Le design du site a été dévellopé au tour du framework CSS <strong>MDB</strong> afin de garantir un responsive design à toute épreuve ainsi qu'un style moderne et agréable.</p>
                     <p>Le framework garantit aussi une compatibilité avec tout les navigateurs quelque soit le système hôte.</p>
+                    <p>Le backoffice est quand à lui assuré pas <strong>Laravel 6.13</strong> pour controler au mieux les accès aux site, le MVC et bien d'autre chose encore...</p>
                     <!-- Main heading -->
 
                     <hr>
 
-                    <p>
-                        <strong>400+</strong> material UI elements,
-                        <strong>600+</strong> material icons,
-                        <strong>74</strong> CSS animations, SASS files, templates, tutorials and many more.
-                        <strong>Free for personal and commercial use.</strong>
-                    </p>
-
-                    <!-- CTA -->
-                    <a target="_blank" href="https://mdbootstrap.com/docs/jquery/getting-started/download/" class="btn btn-indigo btn-md">Download
-                        <i class="fas fa-download ml-1"></i>
-                    </a>
-                    <a target="_blank" href="https://mdbootstrap.com/docs/jquery/components/" class="btn btn-indigo btn-md">Live
-                        demo
-                        <i class="far fa-image ml-1"></i>
-                    </a>
+                    <div class="row">
+                        <div class="col-3 mb-3 text-center">
+                            <img src="https://mdbootstrap.com/img/logo/mdb-transparent-big.png" class="img-fluid z-depth-1"
+                                 alt="Responsive image">
+                        </div>
+                        <div class="col-3 mb-3 text-center">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/3/3d/LaravelLogo.png" class="img-fluid z-depth-1 "
+                                 alt="Responsive image">
+                        </div>
+                        <div class="col-3 mb-3 text-center">
+                            <img src="https://upload.wikimedia.org/wikipedia/fr/thumb/6/62/MySQL.svg/1200px-MySQL.svg.png" class="img-fluid z-depth-1 "
+                                 alt="Responsive image">
+                        </div>
+                    </div>
 
                 </div>
                 <!--Grid column-->
@@ -180,7 +180,7 @@
 
                     <p class="h5 text-center mb-4">Regarder notre vidéo de présentation</p>
                     <div class="embed-responsive embed-responsive-16by9">
-                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/cXTThxoywNQ" allowfullscreen></iframe>
+                        <iframe class="embed-responsive-item" src="http://codejam.arthursicard.fr" allowfullscreen></iframe>
                     </div>
                 </div>
                 <!--/Grid column-->
@@ -196,7 +196,7 @@
         <!--Section: Not enough-->
         <section>
 
-            <h2 class="my-5 h3 text-center">Not enough?</h2>
+            <h2 class="my-5 h3 text-center">Fonctionnalité terminé</h2>
 
             <!--First row-->
             <div class="row features-small mb-5 mt-3 wow fadeIn">
@@ -209,9 +209,8 @@
                             <i class="fas fa-check-circle fa-2x indigo-text"></i>
                         </div>
                         <div class="col-10">
-                            <h6 class="feature-title">Free for personal and commercial use</h6>
-                            <p class="grey-text">Our license is user-friendly. Feel free to use MDB for both private as well as
-                                commercial projects.
+                            <h6 class="feature-title">Système d'authenfication</h6>
+                            <p class="grey-text">Il est possible de se créer un compte puis de ce connecter.
                             </p>
                             <div style="height:15px"></div>
                         </div>
@@ -224,8 +223,8 @@
                             <i class="fas fa-check-circle fa-2x indigo-text"></i>
                         </div>
                         <div class="col-10">
-                            <h6 class="feature-title">400+ UI elements</h6>
-                            <p class="grey-text">An impressive collection of flexible components allows you to develop any project.
+                            <h6 class="feature-title">Système de mail</h6>
+                            <p class="grey-text">Le système de mail pour la vérification d'adresse email à l'inscription ou encore la réinitialisation de mot passe est fonctionnel. Malheuresement le service  utilisé (mailtrap.io) ne permet l'envoi de mail jusqu'au vrai destinataire en mode sandbox.
                             </p>
                             <div style="height:15px"></div>
                         </div>
@@ -238,8 +237,8 @@
                             <i class="fas fa-check-circle fa-2x indigo-text"></i>
                         </div>
                         <div class="col-10">
-                            <h6 class="feature-title">600+ icons</h6>
-                            <p class="grey-text">Hundreds of useful, scalable, vector icons at your disposal.</p>
+                            <h6 class="feature-title">Dashbord</h6>
+                            <p class="grey-text">Une fois connecté vous avez accès via l'URL "/home". Tout les graphiques sont fonctionnel et interactif. Les données affiché sont prédéfinie.</p>
                             <div style="height:15px"></div>
                         </div>
                     </div>
@@ -251,10 +250,8 @@
                             <i class="fas fa-check-circle fa-2x indigo-text"></i>
                         </div>
                         <div class="col-10">
-                            <h6 class="feature-title">Fully responsive</h6>
-                            <p class="grey-text">It doesn't matter whether your project will be displayed on desktop, laptop,
-                                tablet or mobile phone. MDB
-                                looks great on each screen.</p>
+                            <h6 class="feature-title">Responsive</h6>
+                            <p class="grey-text">Le site est compatible PC, Smartphone et tablette.</p>
                             <div style="height:15px"></div>
                         </div>
                     </div>
@@ -277,9 +274,8 @@
                             <i class="fas fa-check-circle fa-2x indigo-text"></i>
                         </div>
                         <div class="col-10">
-                            <h6 class="feature-title">70+ CSS animations</h6>
-                            <p class="grey-text">Neat and easy to use animations, which will increase the interactivity of your
-                                project and delight your visitors.
+                            <h6 class="feature-title">Base de données</h6>
+                            <p class="grey-text">La base implementé est cohérente avec une utilisation en production du service.
                             </p>
                             <div style="height:15px"></div>
                         </div>
@@ -292,8 +288,8 @@
                             <i class="fas fa-check-circle fa-2x indigo-text"></i>
                         </div>
                         <div class="col-10">
-                            <h6 class="feature-title">Plenty of useful templates</h6>
-                            <p class="grey-text">Need inspiration? Use one of our predefined templates for free.</p>
+                            <h6 class="feature-title">BackOffice fonctionnel</h6>
+                            <p class="grey-text">Même si parfois le Front ne reflète pas les données en bases, le Backoffice est quand à lui bien fonctionnel ! <br><small>(INSERT, DELETE, UPDATE, GET)</small></p>
                             <div style="height:15px"></div>
                         </div>
                     </div>
