@@ -31,13 +31,19 @@ class BatimentController extends Controller
             'ville' => 'required'
         ]);
 
-        if(auth()->user()->batiments()->create($data)) {
+        $inserted = auth()->user()->batiments()->create($data);
+
+        if($inserted) {
             return response()->json([
-                "success" => true
+                "success" => true,
+                "table" => "batiments",
+                "data" =>$inserted
             ], 200);
         } else {
             return response()->json([
-                "success" => true
+                "success" => true,
+                "table" => "batiments",
+                "data" =>$inserted
             ], 500);
         }
     }

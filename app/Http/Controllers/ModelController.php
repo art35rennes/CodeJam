@@ -41,14 +41,17 @@ class ModelController extends Controller
             $errorCode = $e->errorInfo[1];
             if($errorCode == 1062){
                 return json_encode([
-                    "message" => $e->getMessage()
+                    "message" => $e->getMessage(),
+                    "table" => "models",
+                    "data" => $inserted
                 ]);
             }
         }
 
         return response()->json([
             "success" => true,
-            "id" => $inserted->id
+            "table" => "models",
+            "data" => $inserted
         ], 200);
     }
 
@@ -88,13 +91,16 @@ class ModelController extends Controller
             $errorCode = $e->errorInfo[1];
             if($errorCode == 1062){
                 return json_encode([
-                    "message" => $e->getMessage()
+                    "message" => $e->getMessage(),
+                    "data" => $updated
                 ]);
             }
         }
 
         return response()->json([
-            "success" => $updated
+            "success" => $updated,
+            "table" => "models",
+            "data" => $updated
         ], 200);
     }
 

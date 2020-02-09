@@ -50,13 +50,17 @@ class InstallationController extends Controller
                 'description' => ''
             ]);
 
+            $inserted = null;
+
             try {
-                $batiment->installations()->create($data);
+                $inserted = $batiment->installations()->create($data);
             } catch (QueryException $e) {
                 $errorCode = $e->errorInfo[1];
                 if($errorCode == 1062){
                     return json_encode([
-                        "message" => $e->getMessage()
+                        "message" => $e->getMessage(),
+                        "table" => "installations",
+                        "data" => $inserted
                     ]);
                 }
             }
@@ -77,14 +81,17 @@ class InstallationController extends Controller
                 $errorCode = $e->errorInfo[1];
                 if($errorCode == 1062){
                     return json_encode([
-                        "message" => $e->getMessage()
+                        "message" => $e->getMessage(),
+                        "table" => "installations",
+                        "data" => $inserted
                     ]);
                 }
             }
 
             return response()->json([
                 "success" => true,
-                "id" => $inserted->id
+                "table" => "installations",
+                "data" => $inserted
             ], 200);
         }
     }

@@ -46,7 +46,8 @@ class EquipementController extends Controller
 
         return response()->json([
             "success" => true,
-            "id" => $inserted->id
+            "table" => "equipements",
+            "data" => $inserted
         ], 200);
     }
 
@@ -84,13 +85,16 @@ class EquipementController extends Controller
             $errorCode = $e->errorInfo[1];
             if($errorCode == 1062){
                 return json_encode([
-                    "message" => $e->getMessage()
+                    "message" => $e->getMessage(),
+                    "table" => "equipements",
+                    "data" => $updated
                 ]);
             }
         }
 
         return response()->json([
-            "success" => $updated
+            "success" => $updated,
+            "table" => "equipements"
         ], 200);
     }
 

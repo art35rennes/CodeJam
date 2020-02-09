@@ -35,14 +35,16 @@ class BatterieController extends Controller
             $errorCode = $e->errorInfo[1];
             if($errorCode == 1062){
                 return json_encode([
-                    "message" => $e->getMessage()
+                    "message" => $e->getMessage(),
+                    "data" =>$inserted
                 ]);
             }
         }
 
         return response()->json([
             "success" => true,
-            "id" => $inserted->id
+            "id" => $inserted->id,
+            "data" =>$inserted
         ], 200);
     }
 
@@ -76,13 +78,15 @@ class BatterieController extends Controller
             $errorCode = $e->errorInfo[1];
             if($errorCode == 1062){
                 return json_encode([
-                    "message" => $e->getMessage()
+                    "message" => $e->getMessage(),
+                    "data" =>$updated
                 ]);
             }
         }
 
         return response()->json([
-            "success" => $updated
+            "success" => $updated,
+            "data" =>$updated
         ], 200);
     }
 

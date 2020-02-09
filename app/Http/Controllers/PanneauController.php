@@ -37,14 +37,17 @@ class PanneauController extends Controller
             $errorCode = $e->errorInfo[1];
             if($errorCode == 1062){
                 return json_encode([
-                    "message" => $e->getMessage()
+                    "message" => $e->getMessage(),
+                    "table" => "panneaux",
+                    "data" => $inserted
                 ]);
             }
         }
 
         return response()->json([
             "success" => true,
-            "id" => $inserted->id
+            "table" => "panneaux",
+            "data" => $inserted
         ], 200);
     }
 
@@ -81,13 +84,16 @@ class PanneauController extends Controller
             $errorCode = $e->errorInfo[1];
             if($errorCode == 1062){
                 return json_encode([
-                    "message" => $e->getMessage()
+                    "message" => $e->getMessage(),
+                    "table" => "panneaux",
+                    "data" => $updated
                 ]);
             }
         }
 
         return response()->json([
-            "success" => $updated
+            "success" => $updated,
+            "data" => $updated
         ], 200);
     }
 
