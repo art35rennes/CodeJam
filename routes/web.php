@@ -39,7 +39,7 @@ Route::delete('/batiments/{batiment}', 'BatimentController@destroy')->name('bati
 Route::get('/installations', 'InstallationController@list')->name('installations.list');
 Route::get('/batiments/{batiment}/installations', 'InstallationController@index')->name('installations.index');
 Route::get('/batiments/{batiment}/installations/create', 'InstallationController@create')->name('installations.create');
-Route::post('/batiments/installations/{batiment}', 'InstallationController@store')->name('installations.store');
+Route::post('/batiments/installations/{batiment?}', 'InstallationController@store')->name('installations.store');
 Route::get('/batiments/{batiment}/installations/{installation}', 'InstallationController@show')->name('installations.show');
 Route::get('/batiments/{batiment}/installations/{installation}/edit', 'InstallationController@edit')->name('installations.edit');
 Route::patch('/batiments/{batiment}/installations/{installation}', 'InstallationController@update')->name('installations.update');
@@ -63,7 +63,7 @@ Route::get('/problemes/{probleme}/solutions/{solution}/edit', 'SolutionControlle
 Route::patch('/problemes/{probleme}/solutions/{solution}', 'SolutionController@update')->name('solutions.update');
 Route::delete('/problemes/{probleme}/solutions/{solution}', 'SolutionController@destroy')->name('solutions.destroy');
 
-//Model
+//Models
 Route::get('/models', 'ModelController@index')->name('models.index');
 Route::get('/models/create', 'ModelController@create')->name('models.create');
 Route::post('/models', 'ModelController@store')->name('models.store');
@@ -71,6 +71,15 @@ Route::get('/models/{model}', 'ModelController@show')->name('models.show');
 Route::get('/models/{model}/edit', 'ModelController@edit')->name('models.edit');
 Route::patch('/models/{model}', 'ModelController@update')->name('models.update');
 Route::delete('/models/{model}', 'ModelController@destroy')->name('models.destroy');
+
+//Equipements
+Route::get('/equipements', 'EquipementController@index')->name('equipements.index');
+Route::get('/equipements/create', 'EquipementController@create')->name('equipements.create');
+Route::post('/equipements', 'EquipementController@store')->name('equipements.store');
+Route::get('/equipements/{model}', 'EquipementController@show')->name('equipements.show');
+Route::get('/equipements/{model}/edit', 'EquipementController@edit')->name('equipements.edit');
+Route::patch('/equipements/{model}', 'EquipementController@update')->name('equipements.update');
+Route::delete('/equipements/{model}', 'EquipementController@destroy')->name('equipements.destroy');
 
 //Logs
 Route::get('/logs', 'LogController@index')->name('logs.index');
@@ -81,3 +90,20 @@ Route::get('/logs/{log}/edit', 'LogController@edit')->name('logs.edit');
 Route::patch('/logs/{log}', 'LogController@update')->name('logs.update');
 Route::delete('/logs/{log}', 'LogController@destroy')->name('logs.destroy');
 
+//Panneaux
+Route::get('/panneaux', 'PanneauController@index')->name('panneaux.index');
+Route::get('/panneaux/create', 'PanneauController@create')->name('panneaux.create');
+Route::post('/panneaux', 'PanneauController@store')->name('panneaux.store');
+Route::get('/panneaux/{model}', 'PanneauController@show')->name('panneaux.show');
+Route::get('/panneaux/{model}/edit', 'PanneauController@edit')->name('panneaux.edit');
+Route::patch('/panneaux/{model}', 'PanneauController@update')->name('panneaux.update');
+Route::delete('/panneaux/{model}', 'PanneauController@destroy')->name('panneaux.destroy');
+
+//Batteries
+Route::get('/batteries', 'BatterieController@index')->name('batteries.index');
+Route::get('/batteries/create', 'BatterieController@create')->name('batteries.create');
+Route::post('/batteries', 'BatterieController@store')->name('batteries.store');
+Route::get('/batteries/{batterie}', 'BatterieController@show')->name('batteries.show');
+Route::get('/batteries/{batterie}/edit', 'BatterieController@edit')->name('batteries.edit');
+Route::patch('/batteries/{batterie}', 'BatterieController@update')->name('batteries.update');
+Route::delete('/batteries/{batterie}', 'BatterieController@destroy')->name('batteries.destroy');

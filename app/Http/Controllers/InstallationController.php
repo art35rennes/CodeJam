@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Batiment;
 use App\Installation;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Database\QueryException;
 
 class InstallationController extends Controller
 {
@@ -43,15 +44,22 @@ class InstallationController extends Controller
 
     public function store(Batiment $batiment)
     {
-        if(Batiment::find($batiment)) {
+        if(!(Batiment::find($batiment)->isEmpty())) {
             $data = request()->validate([
                 'nom' => 'required',
                 'description' => ''
             ]);
 
-            dd($data);
-
-            $batiment->installations()->create($data);
+            try {
+                $batiment->installations()->create($data);
+            } catch (QueryException $e) {
+                $errorCode = $e->errorInfo[1];
+                if($errorCode == 1062){
+                    return json_encode([
+                        "message" => $e->getMessage()
+                    ]);
+                }
+            }
 
             return view('installations.index');
         } else {
@@ -61,17 +69,24 @@ class InstallationController extends Controller
                 'description' => ''
             ]);
 
-            dd($data);
+            $inserted = null;
 
-            $inserted = auth()->user()->dernierBatiment()->installations()->create($data);
+            try {
+                $inserted = auth()->user()->dernierBatiment->installations()->create($data);
+            } catch (QueryException $e) {
+                $errorCode = $e->errorInfo[1];
+                if($errorCode == 1062){
+                    return json_encode([
+                        "message" => $e->getMessage()
+                    ]);
+                }
+            }
 
             return response()->json([
                 "success" => true,
-                "id" => $inserted
+                "id" => $inserted->id
             ], 200);
         }
-
-
     }
 
     public function show(Batiment $batiment, Installation $installation)

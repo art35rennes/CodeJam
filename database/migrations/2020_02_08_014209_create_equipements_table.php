@@ -19,11 +19,11 @@ class CreateEquipementsTable extends Migration
             $table->unsignedBigInteger('installation_id');
             $table->foreign('model_id')->references('id')->on('models');
             $table->foreign('installation_id')->references('id')->on('installations');
-            $table->date('date_installation');
-            $table->float('orientation');
-            $table->string('geolocalisation');
-            $table->float('elevation');
-            $table->float('inclinaison');
+            $table->date('date_installation')->nullable();
+            $table->float('orientation')->nullable();
+            $table->string('geolocalisation')->nullable();
+            $table->float('elevation')->nullable();
+            $table->float('inclinaison')->nullable();
             $table->timestamps();
             $table->engine = 'InnoDB';
         });

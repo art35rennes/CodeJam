@@ -9,7 +9,9 @@ class SolutionController extends Controller
 {
     public function index()
     {
-        return view('solutions.index', compact(Solution::all()));
+        return view('solutions.index', [
+            "solutions" => Solution::all()
+        ]);
     }
 
     public function create() {
@@ -23,8 +25,6 @@ class SolutionController extends Controller
             'description' => '',
             'media' => ''
         ]);
-
-        dd($data);
 
         $probleme->solutions()->create($data);
 
@@ -54,8 +54,6 @@ class SolutionController extends Controller
             'description' => '',
             'media' => ''
         ]);
-
-        dd($data);
 
         $solution->update($data);
 

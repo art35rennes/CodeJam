@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Http\Request;
+use Illuminate\Database\QueryException;
 
 class ModelController extends Controller
 {
@@ -14,7 +14,8 @@ class ModelController extends Controller
         ]);
     }
 
-    public function create() {
+    public function create()
+    {
         return view('models.create');
     }
 
@@ -33,47 +34,76 @@ class ModelController extends Controller
             'certifie' => 'boolean'
         ]);
 
-        dd($data);
+        $inserted = null;
 
-        $inserted = Model::create($data);
+        try {
+            $inserted = Model::create($data);
+        } catch (QueryException $e) {
+            $errorCode = $e->errorInfo[1];
+            if($errorCode == 1062){
+                return json_encode([
+                    "message" => $e->getMessage()
+                ]);
+            }
+        }
 
-        return view('models.index');
+        return response()->json([
+            "success" => true,
+            "id" => $inserted->id
+        ], 200);
     }
 
-    public function show(Probleme $probleme)
+    public function show(Model $model)
     {
-        return view('problemes.show', [
-            'probleme' => $probleme
+        return view('models.show', [
+            'model' => $model
         ]);
     }
 
-    public function edit(Probleme $probleme)
+    public function edit(Model $model)
     {
-        return view('problemes.edit', [
-            'probleme' => $probleme
+        return view('models.edit', [
+            'model' => $model
         ]);
     }
 
-    public function update(Probleme $probleme)
+    public function update(Model $model)
     {
         $data = request()->$this->validate([
-            'nom' => 'required',
-            'description' => '',
+            'marque' => 'required',
+            'reference' => 'required',
             'equipement' => 'required',
-            'media' => ''
+            'largeur' => '',
+            'hauteur' => '',
+            'profondeur' => '',
+            'poids' => '',
+            'rendement' => '',
+            'equipement' => 'required',
+            'certifie' => 'boolean'
         ]);
 
-        dd($data);
+        $updated = false;
 
-        $probleme->update($data);
+        try {
+            $updated = $model->update($data);
+        } catch (QueryException $e) {
+            $errorCode = $e->errorInfo[1];
+            if($errorCode == 1062){
+                return json_encode([
+                    "message" => $e->getMessage()
+                ]);
+            }
+        }
 
-        return redirect()->route('problemes.show', $probleme);
+        return response()->json([
+            "success" => $updated
+        ], 200);
     }
 
-    public function destroy(Batiment $batiment)
+    public function destroy(Model $model)
     {
-        $batiment->delete();
+        $model->delete();
 
-        return redirect()->route('problemes.index');
+        return redirect()->route('models.index');
     }
 }

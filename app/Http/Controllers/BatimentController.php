@@ -30,8 +30,6 @@ class BatimentController extends Controller
             'geolocalisation' => ''
         ]);
 
-        dd($data);
-
         if(auth()->user()->batiments()->create($data)) {
             return response()->json([
                 "success" => true
@@ -64,8 +62,6 @@ class BatimentController extends Controller
             'description' => '',
             'geolocalisation' => ''
         ]);
-
-        dd($data);
 
         $batiment->update($data);
 
