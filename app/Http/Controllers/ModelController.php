@@ -30,7 +30,6 @@ class ModelController extends Controller
             'profondeur' => '',
             'poids' => '',
             'rendement' => '',
-            'equipement' => 'required',
             'certifie' => 'boolean'
         ]);
 
@@ -78,7 +77,6 @@ class ModelController extends Controller
             'profondeur' => '',
             'poids' => '',
             'rendement' => '',
-            'equipement' => 'required',
             'certifie' => 'boolean'
         ]);
 

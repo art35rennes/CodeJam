@@ -27,7 +27,8 @@ class BatimentController extends Controller
         $data = request()->validate([
             'nom' => 'required',
             'description' => '',
-            'geolocalisation' => ''
+            'geolocalisation' => '',
+            'ville' => 'required'
         ]);
 
         if(auth()->user()->batiments()->create($data)) {
@@ -60,7 +61,8 @@ class BatimentController extends Controller
         $data = request()->$this->validate([
             'nom' => 'required',
             'description' => '',
-            'geolocalisation' => ''
+            'geolocalisation' => '',
+            'ville' => 'required'
         ]);
 
         $batiment->update($data);

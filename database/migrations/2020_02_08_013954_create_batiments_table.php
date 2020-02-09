@@ -21,6 +21,7 @@ class CreateBatimentsTable extends Migration
             $table->unique(['user_id', 'nom'], 'signature');
             $table->text('description')->nullable();
             $table->string('geolocalisation')->nullable();
+            $table->boolean('ville')->default(false);
             $table->timestamps();
             $table->engine = 'InnoDB';
         });
