@@ -110,8 +110,8 @@ $('#addModele').click(function () {
         // '{{--Panneaux--}}'
         ($type.val()==="1"?'<form class="form-data" method="POST" action="/panneaux">'+
         '<input type="hidden" name="produit_id" value="">'+
-        '<input type="hidden" name="puissance_nominal" value="'+$("#puissance_nominal").val()+'">'+
-        '<input type="hidden" name="tension_nominal" value="'+$("#tension_nominal").val()+'">'+
+        '<input type="hidden" name="puissance_nominale" value="'+$("#puissance_nominale").val()+'">'+
+        '<input type="hidden" name="tension_nominale" value="'+$("#tension_nominale").val()+'">'+
         '<input type="hidden" name="tension_max" value="'+$("#tension_max").val()+'">'+
         '<input type="hidden" name="courant_max" value="'+$("#courant_max").val()+'">'+
         '<input type="hidden" name="tension_co" value="'+$("#tension_co").val()+'">'+

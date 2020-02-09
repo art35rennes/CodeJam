@@ -15,11 +15,8 @@ class CreateBatteriesTable extends Migration
     {
         Schema::create('batteries', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('produit_id');
-            $table->foreign('produit_id')->references('id')->on('produits');
             $table->float('tension_stockage');
             $table->float('capacite_stockage');
-            $table->unique(['tension_stockage', 'capacite_stockage'], 'signature');
             $table->string('type');
             $table->timestamps();
             $table->engine = 'InnoDB';

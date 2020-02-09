@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Batiment;
 use App\Produit;
+use Illuminate\Support\Facades\DB;
 
 class BatimentController extends Controller
 {
@@ -27,7 +28,6 @@ class BatimentController extends Controller
 
     public function store()
     {
-
         $data = request()->validate([
             'nom' => 'required',
             'description' => '',
@@ -59,8 +59,39 @@ class BatimentController extends Controller
 
     public function show(Batiment $batiment)
     {
+        $installations = $batiment->installations;
+
+        foreach ($installations as $installation)
+        {
+            $equipements = $installation->equipements;
+
+            foreach ($equipements as $equipement)
+            {
+                $produit = $equipement->produit;
+                $equipement["produit"] =  $produit;
+
+                switch ($produit->equipement)
+                {
+                    case "panneau":
+                        $equipement["panneau"] = $produit->panneau($produit["type_id"]);
+                        break;
+                    case "batterie":
+                        $equipement["batterie"] = $produit->batterie($produit["type_id"]);
+                        break;
+                }
+                //$equipement["logs"] = $equipement->logs();
+            }
+
+            $installation["equipements"] = $equipements;
+        }
+
+        $returnArray["batiment"] = $batiment;
+        $returnArray["installations"] = $installations;
+
+        //dd($returnArray);
+
         return view('batiments.show', [
-            'batiment' => $batiment
+            'batiments' => $returnArray
         ]);
     }
 

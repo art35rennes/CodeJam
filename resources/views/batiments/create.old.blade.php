@@ -178,12 +178,12 @@
                     <div class="form-row">
                         {{--Panneaux--}}
                         <div class="md-form">
-                            <input type="number" name="puissance_nominal" id="puissance_nominal" class="form-control modelForm">
-                            <label for="puissance_nominal">Puissance nominal</label>
+                            <input type="number" name="puissance_nominale" id="puissance_nominale" class="form-control modelForm">
+                            <label for="puissance_nominale">Puissance nominal</label>
                         </div>
                         <div class="md-form">
-                            <input type="number" name="tension_nominal" id="tension_nominal" class="form-control modelForm">
-                            <label for="tension_nominal">Tension nominal</label>
+                            <input type="number" name="tension_nominale" id="tension_nominale" class="form-control modelForm">
+                            <label for="tension_nominale">Tension nominal</label>
                         </div>
                         <div class="md-form">
                             <input type="number" name="tension_max" id="tension_max" class="form-control modelForm">

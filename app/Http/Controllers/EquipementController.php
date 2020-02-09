@@ -22,18 +22,17 @@ class EquipementController extends Controller
         $equipements = Equipement::all();
         $returnArray = [];
 
-
         foreach ($equipements as $equipement)
         {
             $arrayFormat = [
                 "equipement" => $equipement,
-                "produit" => $equipement->produit(),
-                "installation" => $equipement->installation()
+                "produit" => $equipement->produit,
+                "installation" => $equipement->installation
             ];
             array_push($returnArray, $arrayFormat);
         }
 
-        return view('equipement.list', [
+        return view('equipements.index', [
             "equipements" => $returnArray
         ]);
     }
@@ -58,7 +57,7 @@ class EquipementController extends Controller
         $data = request()->validate([
             'installation_id' => "required",
             'produit_id' => 'required',
-            'equipement' => 'required',
+            'equipement' => '',
             "date_installation" => '',
             "geolocalisation" => '',
             "orientation" => '',
@@ -75,27 +74,30 @@ class EquipementController extends Controller
            "tension_nominale" => '',
            "tension_maximale" => '',
            "courant_maximal" => '',
-           "tension_co" => '',
+           "tension_circuit_ouvert" => '',
            "courant_court_circuit" => '',
            "tension_stockage" => '',
            "capacite_stockage" => '',
             "type" => '',
         ]);
 
-        $produitData = [
-            "marque" => $data["marque"],
-            "reference" => $data["reference"],
-            "largeur" => $data["largeur"],
-            "longueur" => $data["longueur"],
-            "hauteur" => $data["hauteur"],
-            "poids" => $data["poids"],
-            "rendement" => $data["rendement"],
-            "equipement" => $data["equipement"]
-        ];
-
-        if($data["equipement"] == -1)
+        if(request()->request->has("equipement"))
         {
-            $produitData["equipement"] = null;
+            $produitData = [
+                "marque" => $data["marque"],
+                "reference" => $data["reference"],
+                "largeur" => $data["largeur"],
+                "longueur" => $data["longueur"],
+                "hauteur" => $data["hauteur"],
+                "poids" => $data["poids"],
+                "rendement" => $data["rendement"],
+                "equipement" => $data["equipement"]
+            ];
+
+            if($data["equipement"] == -1)
+            {
+                $produitData["equipement"] = null;
+            }
         }
 
         $equipementData = [
@@ -109,63 +111,46 @@ class EquipementController extends Controller
 
         $newProduit = ($data["produit_id"] == -1 ? true : false);
 
-        if($newProduit)
-        {
-            $produit = Produit::create($produitData);
+        if($newProduit) {
+            switch ($data["equipement"]) {
+                case "panneau":
+                    $panneauData = [
+                        "puissance_nominale" => $data["puissance_nominale"],
+                        "tension_nominale" => $data["tension_nominale"],
+                        "tension_maximale" => $data["tension_maximale"],
+                        "courant_maximal" => $data["courant_maximal"],
+                        "tension_circuit_ouvert" => $data["tension_circuit_ouvert"],
+                        "courant_court_circuit" => $data["courant_court_circuit"]
+                    ];
+
+                    $panneau = Panneau::create($panneauData);
+                    $produitData["type"] = "panneau";
+                    $produitData["type_id"] = $panneau->id;
+                    $produit = Produit::create($produitData);
+                    break;
+
+                case "batterie":
+                    $batterieData = [
+                        "tension_stockage" => $data["tension_stockage"],
+                        "capacite_stockage" => $data["capacite_stockage"],
+                        "type" => $data["type"]
+                    ];
+
+                    $batterie = Batterie::create($batterieData);
+                    $produitData["type"] = "batterie";
+                    $produitData["type_id"] = $batterie->id;
+                    $produit = Produit::create($produitData);
+                    break;
+            }
             $equipementData["produit_id"] = $produit->id;
         } else
         {
             $equipementData["produit_id"] = $data["produit_id"];
         }
 
-
-
-        switch ($data["equipement"])
-        {
-            case 1:
-                $panneauData = [
-                    "puissance_nominal" => $data["puissance_nominal"],
-                    "tension_nominal" => $data["tension_nominal"],
-                    "tension_max" => $data["tension_max"],
-                    "courant_max" => $data["courant_max"],
-                    "tension_co" => $data["tension_co"],
-                    "courant_cc" => $data["courant_cc"]
-                ];
-
-                if($newProduit)
-                {
-                    $panneauData["produit_id"] = $produit->id;
-                } else
-                {
-                    $panneauData["produit_id"] = $data["produit_id"];
-                }
-
-                Panneau::create($panneauData);
-                break;
-
-            case 2:
-                $batterieData = [
-                    "tension_stockage" => $data["tension_stockage"],
-                    "capacite_stockage" => $data["capacite_stockage"],
-                    "type" => $data["type"]
-                ];
-
-                if($newProduit)
-                {
-                    $batterieData["produit_id"] = $produit->id;
-
-                } else
-                {
-                    $batterieData["produit_id"] = $data["produit_id"];
-                }
-
-                Batterie::create($batterieData);
-                break;
-        }
-
         $inserted = null;
         try {
-            $inserted = Equipement::create($data);
+            $inserted = Equipement::create($equipementData);
         } catch (QueryException $e) {
             $errorCode = $e->errorInfo[1];
             if($errorCode == 1062){
@@ -179,7 +164,7 @@ class EquipementController extends Controller
 
         if (!request()->request->has("ajax"))
         {
-            return redirect()->route('equipements.index');
+            return redirect()->route('equipements.list');
         } else
         {
             return response()->json([
