@@ -36,7 +36,7 @@
         </div>
 
         <div id="form-row">
-            <select name="batiment_id" class="mdb-select md-form col-4">
+            <select name="batiment_id" class="mdb-select md-form col-4" required>
                 <option value="" disabled selected>Choisissez un batiment</option>
                 @foreach($batiments as $batiment)
                     <option value="{{$batiment->id}}">{{$batiment->nom}}</option>

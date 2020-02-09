@@ -8,29 +8,68 @@
         <section id="recap">
             <h4>Récapitulatif</h4>
             <div class="row text-center">
-                @for($i = 0; $i < 4; $i++)
-                    <div class="col-lg-6 col-xl-3 col-sm-5 mb-2 text-center ">
-                        <!-- Summary -->
-                        <p>Production total: <strong>9.8 MW</strong>
-                            <button type="button" class="btn btn-info btn-sm p-2 waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="" data-original-title="Production total sur la journée en cours"><i class="fas fa-question"></i></button>
-                        </p>
-                        <p>Production moyenne: <strong>1.3 MW</strong>
-                            <button type="button" class="btn btn-info btn-sm p-2 mr-0 waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="" data-original-title="Production moyenne d'un équipement sur une journée"><i class="fas fa-question"></i></button>
-                        </p>
+{{--                @for($i = 0; $i < 4; $i++)--}}
+{{--                ENERGIE VERTE--}}
+                <div class="col-lg-6 col-xl-3 col-sm-5 mb-2 text-center ">
+                    <!-- Summary -->
+                    <p>Production total: <strong>9.8 MW</strong>
+                        <button type="button" class="btn btn-info btn-sm p-2 waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="" data-original-title="Production total sur la journée en cours"><i class="fas fa-question"></i></button>
+                    </p>
+                    <p>Production actuel: <strong>1.3 MW</strong>
+                        <button type="button" class="btn btn-info btn-sm p-2 mr-0 waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="" data-original-title="Production moyenne d'un équipement sur une journée"><i class="fas fa-question"></i></button>
+                    </p>
 
-                        <!-- Change chart -->
-                        <span class="min-chart my-4" id="chart-sales" data-percent="30"><span class="percent">90</span><canvas height="110" width="110"></canvas></span>
-                        <h5>
-                            <span class="badge red accent-2 p-2">Change <i class="fas fa-arrow-circle-up ml-1"></i></span>
-                            <button type="button" class="btn btn-info btn-sm p-2 waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="" data-original-title="Percentage change compared to the same period in the past"><i class="fas fa-question"></i>
-                            </button>
-                        </h5>
-                    </div>
+                    <!-- Change chart -->
+                    <span class="min-chart my-4" id="chart-sales" data-percent="30"><span class="percent">90</span><canvas height="110" width="110"></canvas></span>
+                    <h5>
+                        <span class="badge red accent-2 p-2">Production d'energie verte <i class="fas fa-arrow-circle-up ml-1"></i></span>
+                        <button type="button" class="btn btn-info btn-sm p-2 waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="" data-original-title="Percentage change compared to the same period in the past"><i class="fas fa-question"></i>
+                        </button>
+                    </h5>
+                </div>
+
+{{--                HYDRO--}}
+                <div class="col-lg-6 col-xl-3 col-sm-5 mb-2 text-center ">
+                    <!-- Summary -->
+                    <p>Consomation total: <strong>2.3 MW</strong>
+                        <button type="button" class="btn btn-info btn-sm p-2 waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="" data-original-title="Production total sur la journée en cours"><i class="fas fa-question"></i></button>
+                    </p>
+                    <p>Consomation actuel: <strong>0.7 MW</strong>
+                        <button type="button" class="btn btn-info btn-sm p-2 mr-0 waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="" data-original-title="Production moyenne d'un équipement sur une journée"><i class="fas fa-question"></i></button>
+                    </p>
+
+                    <!-- Change chart -->
+                    <span class="min-chart my-4" id="chart-sales" data-percent="30"><span class="percent">90</span><canvas height="110" width="110"></canvas></span>
+                    <h5>
+                        <span class="badge blue accent-2 p-2">Consomation Hydro Quebec <i class="fas fa-arrow-circle-up ml-1"></i></span>
+                        <button type="button" class="btn btn-info btn-sm p-2 waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="" data-original-title="Percentage change compared to the same period in the past"><i class="fas fa-question"></i>
+                        </button>
+                    </h5>
+                </div>
+
+{{--                BATTERIE--}}
+                <div class="col-lg-6 col-xl-3 col-sm-5 mb-2 text-center ">
+                    <!-- Summary -->
+                    <p>Niveau de charge: <strong>67%</strong>
+                        <button type="button" class="btn btn-info btn-sm p-2 waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="" data-original-title="Production total sur la journée en cours"><i class="fas fa-question"></i></button>
+                    </p>
+                    <p>Production actuel: <strong>0.5 MW</strong>
+                        <button type="button" class="btn btn-info btn-sm p-2 mr-0 waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="" data-original-title="Se décharge actuellement pour alimenter le reseau"><i class="fas fa-question"></i></button>
+                    </p>
+
+                    <!-- Change chart -->
+                    <span class="min-chart my-4" id="chart-sales" data-percent="30"><span class="percent">90</span><canvas height="110" width="110"></canvas></span>
+                    <h5>
+                        <span class="badge orange accent-2 p-2">Statue des batteries <i class="fas fa-arrow-circle-up ml-1"></i></span>
+                        <button type="button" class="btn btn-info btn-sm p-2 waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="" data-original-title="Percentage change compared to the same period in the past"><i class="fas fa-question"></i>
+                        </button>
+                    </h5>
+                </div>
                     {{--                    #1 - Production d'energie verte--}}
                     {{--                    #2 - Consomation sur le réseau public--}}
                     {{--                    #3 - Niveau de charge des batteries--}}
                     {{--                    #4 - Note environementale--}}
-                @endfor
+{{--                @endfor--}}
 
             </div>
         </section>
