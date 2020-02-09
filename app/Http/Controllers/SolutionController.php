@@ -8,7 +8,7 @@ use Illuminate\Database\QueryException;
 
 class SolutionController extends Controller
 {
-    public function index()
+    public function index(Probleme $probleme)
     {
         return view('solutions.index', [
             "solutions" => Solution::all()
