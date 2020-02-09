@@ -34,6 +34,7 @@ $(document).ready(function () {
             "targets": -1,
             "orderable": false
         } ],
+        "lengthMenu": [[ 5, 10, 25, 50, 100, -1], [5, 10, 25, 50, 100, "Tout"]]
     });
     $('#dtMaterialDesignExample_wrapper').find('label').each(function () {
         $(this).parent().append($(this).children());

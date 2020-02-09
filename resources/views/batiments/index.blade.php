@@ -20,7 +20,7 @@
             <td class="text-truncate">{{$batiment->description}}</td>
             <td>{{$batiment->geolocalisation}}</td>
             <td>{{$batiment->created_at}}</td>
-            <td><i class="fas fa-search"></i></td>
+            <td><a href="{{route('batiments.show', ['batiment'=>1])}}"><i class="fas fa-search"></i></a></td>
         @endforeach
         </tbody>
     </table>
