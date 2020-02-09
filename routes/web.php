@@ -63,23 +63,23 @@ Route::get('/problemes/{probleme}/solutions/{solution}/edit', 'SolutionControlle
 Route::patch('/problemes/{probleme}/solutions/{solution}', 'SolutionController@update')->name('solutions.update');
 Route::delete('/problemes/{probleme}/solutions/{solution}', 'SolutionController@destroy')->name('solutions.destroy');
 
-//Models
-Route::get('/models', 'ModelController@index')->name('models.index');
-Route::get('/models/create', 'ModelController@create')->name('models.create');
-Route::post('/models', 'ModelController@store')->name('models.store');
-Route::get('/models/{model}', 'ModelController@show')->name('models.show');
-Route::get('/models/{model}/edit', 'ModelController@edit')->name('models.edit');
-Route::patch('/models/{model}', 'ModelController@update')->name('models.update');
-Route::delete('/models/{model}', 'ModelController@destroy')->name('models.destroy');
+//Produits
+Route::get('/produits', 'ProduitController@index')->name('produits.index');
+Route::get('/produits/create', 'ProduitController@create')->name('produits.create');
+Route::post('/produits', 'ProduitController@store')->name('produits.store');
+Route::get('/produits/{produit}', 'ProduitController@show')->name('produits.show');
+Route::get('/produits/{produit}/edit', 'ProduitController@edit')->name('produits.edit');
+Route::patch('/produits/{produit}', 'ProduitController@update')->name('produits.update');
+Route::delete('/produits/{produit}', 'ProduitController@destroy')->name('produits.destroy');
 
 //Equipements
 Route::get('/equipements', 'EquipementController@index')->name('equipements.index');
 Route::get('/equipements/create', 'EquipementController@create')->name('equipements.create');
 Route::post('/equipements', 'EquipementController@store')->name('equipements.store');
-Route::get('/equipements/{model}', 'EquipementController@show')->name('equipements.show');
-Route::get('/equipements/{model}/edit', 'EquipementController@edit')->name('equipements.edit');
-Route::patch('/equipements/{model}', 'EquipementController@update')->name('equipements.update');
-Route::delete('/equipements/{model}', 'EquipementController@destroy')->name('equipements.destroy');
+Route::get('/equipements/{produit}', 'EquipementController@show')->name('equipements.show');
+Route::get('/equipements/{produit}/edit', 'EquipementController@edit')->name('equipements.edit');
+Route::patch('/equipements/{produit}', 'EquipementController@update')->name('equipements.update');
+Route::delete('/equipements/{produit}', 'EquipementController@destroy')->name('equipements.destroy');
 
 //Logs
 Route::get('/logs', 'LogController@index')->name('logs.index');
@@ -94,10 +94,10 @@ Route::delete('/logs/{log}', 'LogController@destroy')->name('logs.destroy');
 Route::get('/panneaux', 'PanneauController@index')->name('panneaux.index');
 Route::get('/panneaux/create', 'PanneauController@create')->name('panneaux.create');
 Route::post('/panneaux', 'PanneauController@store')->name('panneaux.store');
-Route::get('/panneaux/{model}', 'PanneauController@show')->name('panneaux.show');
-Route::get('/panneaux/{model}/edit', 'PanneauController@edit')->name('panneaux.edit');
-Route::patch('/panneaux/{model}', 'PanneauController@update')->name('panneaux.update');
-Route::delete('/panneaux/{model}', 'PanneauController@destroy')->name('panneaux.destroy');
+Route::get('/panneaux/{produit}', 'PanneauController@show')->name('panneaux.show');
+Route::get('/panneaux/{produit}/edit', 'PanneauController@edit')->name('panneaux.edit');
+Route::patch('/panneaux/{produit}', 'PanneauController@update')->name('panneaux.update');
+Route::delete('/panneaux/{produit}', 'PanneauController@destroy')->name('panneaux.destroy');
 
 //Batteries
 Route::get('/batteries', 'BatterieController@index')->name('batteries.index');

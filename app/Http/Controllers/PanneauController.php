@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Panneau;
 use Illuminate\Database\QueryException;
 
 class PanneauController extends Controller
@@ -21,7 +22,7 @@ class PanneauController extends Controller
     public function store()
     {
         $data = request()->validate([
-            'model_id' => 'required',
+            'produit_id' => 'required',
             'puissance_nominale' => 'required',
             'tension_nominale' => 'required',
             'tension_maximale' => 'required',
@@ -68,7 +69,7 @@ class PanneauController extends Controller
     public function update(Panneau $panneau)
     {
         $data = request()->$this->validate([
-            'model_id' => 'required',
+            'produit_id' => 'required',
             'puissance_nominale' => 'required',
             'tension_nominale' => 'required',
             'tension_maximale' => 'required',

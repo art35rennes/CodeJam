@@ -15,8 +15,8 @@ class CreateBatteriesTable extends Migration
     {
         Schema::create('batteries', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('model_id');
-            $table->foreign('model_id')->references('id')->on('produits');
+            $table->unsignedBigInteger('produit_id');
+            $table->foreign('produit_id')->references('id')->on('produits');
             $table->float('tension_stockage');
             $table->float('capacite_stockage');
             $table->unique(['tension_stockage', 'capacite_stockage'], 'signature');

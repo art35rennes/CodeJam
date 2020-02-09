@@ -9,14 +9,14 @@ class ProduitController extends Controller
 {
     public function index()
     {
-        return view('models.index', [
-            "models" => Produit::all()
+        return view('produits.index', [
+            "produits" => Produit::all()
         ]);
     }
 
     public function create()
     {
-        return view('models.create');
+        return view('produits.create');
     }
 
     public function store()
@@ -42,7 +42,7 @@ class ProduitController extends Controller
             if($errorCode == 1062){
                 return json_encode([
                     "message" => $e->getMessage(),
-                    "table" => "models",
+                    "table" => "produits",
                     "data" => $inserted
                 ]);
             }
@@ -50,26 +50,26 @@ class ProduitController extends Controller
 
         return response()->json([
             "success" => true,
-            "table" => "models",
+            "table" => "produits",
             "data" => $inserted
         ], 200);
     }
 
-    public function show(Produit $model)
+    public function show(Produit $produit)
     {
-        return view('models.show', [
-            'model' => $model
+        return view('produits.show', [
+            'produit' => $produit
         ]);
     }
 
-    public function edit(Produit $model)
+    public function edit(Produit $produit)
     {
-        return view('models.edit', [
-            'model' => $model
+        return view('produits.edit', [
+            'produit' => $produit
         ]);
     }
 
-    public function update(Produit $model)
+    public function update(Produit $produit)
     {
         $data = request()->$this->validate([
             'marque' => 'required',
@@ -86,29 +86,29 @@ class ProduitController extends Controller
         $updated = false;
 
         try {
-            $updated = $model->update($data);
+            $updated = $produit->update($data);
         } catch (QueryException $e) {
             $errorCode = $e->errorInfo[1];
             if($errorCode == 1062){
                 return json_encode([
                     "message" => $e->getMessage(),
                     "data" => $updated,
-                    "table" => "models"
+                    "table" => "produits"
                 ]);
             }
         }
 
         return response()->json([
             "success" => $updated,
-            "table" => "models",
+            "table" => "produits",
             "data" => $updated
         ], 200);
     }
 
-    public function destroy(Produit $model)
+    public function destroy(Produit $produit)
     {
-        $model->delete();
+        $produit->delete();
 
-        return redirect()->route('models.index');
+        return redirect()->route('produits.index');
     }
 }

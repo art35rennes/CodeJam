@@ -21,7 +21,7 @@ class BatimentController extends Controller
 
     public function create() {
         return view('batiments.create', [
-            "models" => Produit::all(),
+            "produits" => Produit::all(),
         ]);
     }
 

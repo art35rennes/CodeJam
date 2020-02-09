@@ -15,8 +15,8 @@ class CreatePanneauxsTable extends Migration
     {
         Schema::create('panneauxs', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('model_id');
-            $table->foreign('model_id')->references('id')->on('produits');
+            $table->unsignedBigInteger('produit_id');
+            $table->foreign('produit_id')->references('id')->on('produits');
             $table->float('puissance_nominale');
             $table->float('tension_nominale');
             $table->float('tension_maximale');

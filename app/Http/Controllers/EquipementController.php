@@ -22,7 +22,7 @@ class EquipementController extends Controller
     public function store()
     {
         $data = request()->validate([
-            'model_id' => 'required',
+            'produit_id' => 'required',
             'installation_id' => 'required',
             'date_installation' => '',
             'orientation' => '',
@@ -70,7 +70,7 @@ class EquipementController extends Controller
     public function update(Equipement $equipement)
     {
         $data = request()->$this->validate([
-            'model_id' => 'required',
+            'produit_id' => 'required',
             'installation_id' => 'required',
             'date_installation' => '',
             'orientation' => '',

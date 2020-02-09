@@ -22,7 +22,7 @@ class BatterieController extends Controller
     public function store()
     {
         $data = request()->validate([
-            'model_id' => 'required',
+            'produit_id' => 'required',
             'tension_stockage' => 'required',
             'capacite_stockage' => 'required'
             ]);
@@ -66,7 +66,7 @@ class BatterieController extends Controller
     public function update(Batterie $batterie)
     {
         $data = request()->$this->validate([
-            'model_id' => 'required',
+            'produit_id' => 'required',
             'tension_stockage' => 'required',
             'capacite_stockage' => 'required'
         ]);

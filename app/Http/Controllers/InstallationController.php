@@ -17,7 +17,7 @@ class InstallationController extends Controller
     public function list()
     {
         $list = DB::table('equipements')
-            ->select('installations.id', 'installations.nom', 'batiments.nom as batiment', DB::raw('count(equipements.model_id) as equipements'))
+            ->select('installations.id', 'installations.nom', 'batiments.nom as batiment', DB::raw('count(equipements.produit_id) as equipements'))
             ->leftJoin('installations', 'installations.id', '=' , 'equipements.installation_id')
             ->leftJoin('batiments', 'batiments.id', '=', 'installations.batiment_id')
             ->where('batiments.user_id', '=', auth()->user()->id)
@@ -35,7 +35,7 @@ class InstallationController extends Controller
     {
         return view('installations.index', [
             "installations" => $batiment->installations(),
-            "models" => Produit::all()
+            "produits" => Produit::all()
         ]);
     }
 
