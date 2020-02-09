@@ -12,7 +12,7 @@
                             <div class="card-body">
 
                                 <!--Header-->
-                                <div class="form-header light-green shadow">
+                                <div class="form-header blue-gradient shadow">
                                     <h3>
                                         <i class="fas fa-user-edit mt-2 mb-2"></i> Inscription:</h3>
                                 </div>
@@ -63,7 +63,7 @@
 
 
                                     <div class="text-center">
-                                        <button class="btn light-green btn-lg">S'inscrire</button>
+                                        <button class="btn blue-gradient btn-lg">S'inscrire</button>
                                         <div class="md-form mb-0">
                                             <p class="white-text text-center small">En cliquant sur <span class="font-italic">S'inscrire</span> j'accepte les CGU du site.</p>
                                         </div>
@@ -101,12 +101,12 @@
 @section('css')
     <style>
         .intro-2 {
-            background: url("https://mdbootstrap.com/img/Photos/Others/images/91.jpg")no-repeat center center;
+            background: url("https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/solar-panels-in-sunset-background-royalty-free-image-914449740-1544734734.jpg")no-repeat center center;
             background-size: cover;
         }
 
         .card {
-            background-color: rgba(229, 228, 255, 0.2);
+            background-color: rgba(229, 228, 255, 0.5);
         }
 
         .md-form label {
