@@ -86,10 +86,9 @@
                 <div class="col-md-6 mb-4">
 
                     <!-- Main heading -->
-                    <h3 class="h3 mb-3">Material Design for Bootstrap</h3>
-                    <p>This template is created with Material Design for Bootstrap (
-                        <strong>MDB</strong> ) framework.</p>
-                    <p>Read details below to learn more about MDB.</p>
+                    <h3 class="h3 mb-3">Laravel / MDBootstrap</h3>
+                    <p>Le design du site a été dévellopé au tour du framework CSS <strong>MDB</strong> afin de garantir un responsive design à toute épreuve ainsi qu'un style moderne et agréable.</p>
+                    <p>Le framework garantit aussi une compatibilité avec tout les navigateurs quelque soit le système hôte.</p>
                     <!-- Main heading -->
 
                     <hr>
