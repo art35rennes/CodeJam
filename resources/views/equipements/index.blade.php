@@ -16,12 +16,15 @@
         </thead>
         <tbody>
         @foreach($equipements as $equipement)
-            <td>{{$equipement->id}}</td>
-            <td>{{$equipement->marque}}</td>
-            <td>{{$equipement->reference}}</td>
-            <td>{{$equipement->nom}}</td>
-            <td>{{$equipement->date_installation}}</td>
-            <td><i class="fas fa-search"></i></td>
+            <tr>
+                <td>{{$equipement->id}}</td>
+                <td>{{$equipement->marque}}</td>
+                <td>{{$equipement->reference}}</td>
+                <td>{{$equipement->nom}}</td>
+                <td>{{$equipement->date_installation}}</td>
+                <td><a href="{{route('equipements.show', ['produit'=>1])}}"><i class="fas fa-search"></i></a></td>
+            </tr>
+
         @endforeach
         </tbody>
     </table>

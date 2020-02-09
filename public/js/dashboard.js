@@ -14,189 +14,288 @@ $(function () {
 });
 
 /*Global settings*/
-Chart.defaults.global.defaultFontColor = '#fff';
-$(function () {
-    var data = {
-        labels: ["January", "February", "March", "April", "May", "June", "July"],
+const $graph1 = {
+    type: 'line',
+    data: {
+        labels: ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"],
         datasets: [{
-            label: "My First dataset",
+            label: "Production panneaux solaire (MW)",
+            yAxisID: 'Energie',
             fillColor: "rgba(220,220,220,0.2)",
             strokeColor: "rgba(220,220,220,1)",
             pointColor: "rgba(220,220,220,1)",
             pointStrokeColor: "#fff",
             pointHighlightFill: "#fff",
-            pointHighlightStroke: "rgba(0,0,0,.15)",
-            data: [65, 59, 80, 81, 56, 55, 40],
-            backgroundColor: "#4CAF50"
-        }, {
-            label: "My Second dataset",
-            fillColor: "rgba(255,255,255,.25)",
-            strokeColor: "rgba(255,255,255,.75)",
-            pointColor: "#fff",
-            pointStrokeColor: "#fff",
-            pointHighlightFill: "#fff",
-            pointHighlightStroke: "rgba(0,0,0,.15)",
-            data: [28, 48, 40, 19, 56, 27, 60]
-        }]
-    };
-
-    var dataOneLine = {
-        labels: ["January", "February", "March", "April", "May", "June", "July"],
-        datasets: [{
-            label: "My First dataset",
-            fillColor: "rgba(220,220,220,0.2)",
-            strokeColor: "rgba(220,220,220,1)",
-            pointColor: "rgba(220,220,220,1)",
-            pointStrokeColor: "#fff",
-            pointHighlightFill: "#fff",
-            pointHighlightStroke: "rgba(0,0,0,.15)",
-            data: [35, 55, 44, 58, 53, 55, 60],
-            backgroundColor: "#4CAF50"
-        }]
-    };
-
-    var option = {
+            pointHighlightStroke: "rgba(220,220,220,1)",
+            backgroundColor: 'rgba(0,150,24,0.2)',
+            borderColor: 'rgb(0,150,24)',
+            borderWidth: 1,
+            data: [3, 6, 5, 5, 8, 9, 7]
+        },
+            {
+                label: "Niveau de charge des batteries (%)",
+                yAxisID: 'Charge',
+                fillColor: "rgba(151,187,205,0.2)",
+                strokeColor: "rgb(205,119,17)",
+                pointColor: "rgba(151,187,205,1)",
+                pointStrokeColor: "#fff",
+                pointHighlightFill: "#fff",
+                pointHighlightStroke: "rgba(151,187,205,1)",
+                backgroundColor: 'rgba(255,121,0,0.2)',
+                borderColor: 'rgb(255,121,0)',
+                borderWidth: 1,
+                data: [70, 20, 0, 12, 60, 90, 100]
+            },
+            {
+                label: "Consommation Hydro-Quebec (MW)",
+                yAxisID: 'Energie',
+                fillColor: "rgba(151,187,205,0.2)",
+                strokeColor: "rgb(205,119,17)",
+                pointColor: "rgba(151,187,205,1)",
+                pointStrokeColor: "#fff",
+                pointHighlightFill: "#fff",
+                pointHighlightStroke: "rgba(151,187,205,1)",
+                backgroundColor: 'rgba(255,246,244,0.2)',
+                borderColor: 'rgb(228,241,255)',
+                borderWidth: 1,
+                data: [0, 5, 12, 6, 3, 0, 0]
+            }
+        ],
+    },
+    options: {
         responsive: true,
-        // set font color
-        scaleFontColor: "#fff",
-        // font family
-        defaultFontFamily: "'Roboto', sans-serif",
-        // background grid lines color
-        scaleGridLineColor: "rgba(255,255,255,.1)",
-        // hide vertical lines
-        scaleShowVerticalLines: false,
-    };
+        scales: {
+            yAxes: [{
+                id: 'Energie',
+                type: 'linear',
+                position: 'left',
+                ticks: {
+                    min: 0
+                },
+            }, {
+                id: 'Charge',
+                type: 'linear',
+                position: 'right',
+                ticks: {
+                    max: 100,
+                    min: 0
+                },
+            }]
+        },
+    }
+};
+const $graph2 = {
+    type: 'line',
+    data: {
+        labels: ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"],
+        datasets: [{
+            label: "Production panneaux solaire (MW)",
+            yAxisID: 'Energie',
+            fillColor: "rgba(220,220,220,0.2)",
+            strokeColor: "rgba(220,220,220,1)",
+            pointColor: "rgba(220,220,220,1)",
+            pointStrokeColor: "#fff",
+            pointHighlightFill: "#fff",
+            pointHighlightStroke: "rgba(220,220,220,1)",
+            backgroundColor: 'rgba(0,150,24,0.2)',
+            borderColor: 'rgb(0,150,24)',
+            borderWidth: 1,
+            data: [3, 6, 5, 5, 8, 9, 7]
+            },
+            {
+            label: "Production Géothermique (MW)",
+            yAxisID: 'Energie',
+            fillColor: "rgba(220,220,220,0.2)",
+            strokeColor: "rgba(220,220,220,1)",
+            pointColor: "rgba(220,220,220,1)",
+            pointStrokeColor: "#fff",
+            pointHighlightFill: "#fff",
+            pointHighlightStroke: "rgba(220,220,220,1)",
+            backgroundColor: 'rgba(150,15,120,0.2)',
+            borderColor: 'rgb(150,15,120)',
+            borderWidth: 1,
+            data: [6, 5, 4, 6, 8, 9, 5]
+            },
+            {
+            label: "Niveau de charge des batteries (%)",
+            yAxisID: 'Charge',
+            fillColor: "rgba(151,187,205,0.2)",
+            strokeColor: "rgb(205,119,17)",
+            pointColor: "rgba(151,187,205,1)",
+            pointStrokeColor: "#fff",
+            pointHighlightFill: "#fff",
+            pointHighlightStroke: "rgba(151,187,205,1)",
+            backgroundColor: 'rgba(255,121,0,0.2)',
+            borderColor: 'rgb(255,121,0)',
+            borderWidth: 1,
+            data: [0, 0, 0, 12, 60, 100, 90]
+            },
+            {
+            label: "Consommation Hydro-Quebec (MW)",
+            yAxisID: 'Energie',
+            fillColor: "rgba(151,187,205,0.2)",
+            strokeColor: "rgb(205,119,17)",
+            pointColor: "rgba(151,187,205,1)",
+            pointStrokeColor: "#fff",
+            pointHighlightFill: "#fff",
+            pointHighlightStroke: "rgba(151,187,205,1)",
+            backgroundColor: 'rgba(255,246,244,0.2)',
+            borderColor: 'rgb(228,241,255)',
+            borderWidth: 1,
+            data: [6, 5, 5, 1, 0, 0, 0]
+            }
+        ],
+    },
+    options: {
+        responsive: true,
+        scales: {
+            yAxes: [{
+                id: 'Energie',
+                type: 'linear',
+                position: 'left',
+                ticks: {
+                    min: 0
+                },
+            }, {
+                id: 'Charge',
+                type: 'linear',
+                position: 'right',
+                ticks: {
+                    max: 100,
+                    min: 0
+                },
+            }]
+        },
+    }
+};
+const $graph3 = {
+    type: 'line',
+    data: {
+        labels: ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"],
+        datasets: [{
+            label: "Production panneaux solaire (MW)",
+            yAxisID: 'Energie',
+            fillColor: "rgba(220,220,220,0.2)",
+            strokeColor: "rgba(220,220,220,1)",
+            pointColor: "rgba(220,220,220,1)",
+            pointStrokeColor: "#fff",
+            pointHighlightFill: "#fff",
+            pointHighlightStroke: "rgba(220,220,220,1)",
+            backgroundColor: 'rgba(0,150,24,0.2)',
+            borderColor: 'rgb(0,150,24)',
+            borderWidth: 1,
+            data: [3, 6, 5, 5, 8, 9, 7]
+        },
+            {
+                label: "Niveau de charge des batteries (%)",
+                yAxisID: 'Charge',
+                fillColor: "rgba(151,187,205,0.2)",
+                strokeColor: "rgb(205,119,17)",
+                pointColor: "rgba(151,187,205,1)",
+                pointStrokeColor: "#fff",
+                pointHighlightFill: "#fff",
+                pointHighlightStroke: "rgba(151,187,205,1)",
+                backgroundColor: 'rgba(255,121,0,0.2)',
+                borderColor: 'rgb(255,121,0)',
+                borderWidth: 1,
+                data: [70, 20, 0, 12, 60, 90, 100]
+            },
+        ],
+    },
+    options: {
+        responsive: true,
+        scales: {
+            yAxes: [{
+                id: 'Energie',
+                type: 'linear',
+                position: 'left',
+                ticks: {
+                    min: 0
+                },
+            }, {
+                id: 'Charge',
+                type: 'linear',
+                position: 'right',
+                ticks: {
+                    max: 100,
+                    min: 0
+                },
+            }]
+        },
+    }
+};
+const $graph4 = {
+    type: 'line',
+    data: {
+        labels: ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"],
+        datasets: [{
+            label: "Production Géothermique (MW)",
+            yAxisID: 'Energie',
+            fillColor: "rgba(220,220,220,0.2)",
+            strokeColor: "rgba(220,220,220,1)",
+            pointColor: "rgba(220,220,220,1)",
+            pointStrokeColor: "#fff",
+            pointHighlightFill: "#fff",
+            pointHighlightStroke: "rgba(220,220,220,1)",
+            backgroundColor: 'rgba(150,15,120,0.2)',
+            borderColor: 'rgb(150,15,120)',
+            borderWidth: 1,
+            data: [6, 5, 4, 6, 8, 9, 5]
+            },
+            {
+            label: "Niveau de charge des batteries (%)",
+            yAxisID: 'Charge',
+            fillColor: "rgba(151,187,205,0.2)",
+            strokeColor: "rgb(205,119,17)",
+            pointColor: "rgba(151,187,205,1)",
+            pointStrokeColor: "#fff",
+            pointHighlightFill: "#fff",
+            pointHighlightStroke: "rgba(151,187,205,1)",
+            backgroundColor: 'rgba(255,121,0,0.2)',
+            borderColor: 'rgb(255,121,0)',
+            borderWidth: 1,
+            data: [0, 0, 0, 12, 60, 100, 90]
+            },
+        ],
+    },
+    options: {
+        responsive: true,
+        scales: {
+            yAxes: [{
+                id: 'Energie',
+                type: 'linear',
+                position: 'left',
+                ticks: {
+                    min: 0
+                },
+            }, {
+                id: 'Charge',
+                type: 'linear',
+                position: 'right',
+                ticks: {
+                    max: 100,
+                    min: 0
+                },
+            }]
+        },
+    }
+};
+Chart.defaults.global.defaultFontColor = '#fff';
+$(document).ready(function () {
+    //batiments
+    var ctxL1 = document.getElementById("batiment1").getContext('2d');
+    var ctxL2 = document.getElementById("batiment2").getContext('2d');
+    var myLineChart1 = new Chart(ctxL1, $graph1);
+    var myLineChart2 = new Chart(ctxL2, $graph2);
 
-    //line
-    var ctxL1 = document.getElementById("batiment").getContext('2d');
-    var myLineChart1 = new Chart(ctxL1, {
-        type: 'line',
-        data: {
-            labels: ["January", "February", "March", "April", "May", "June", "July"],
-            datasets: [{
-                label: "My First dataset",
-                fillColor: "rgba(220,220,220,0.2)",
-                strokeColor: "rgba(220,220,220,1)",
-                pointColor: "rgba(220,220,220,1)",
-                pointStrokeColor: "#fff",
-                pointHighlightFill: "#fff",
-                pointHighlightStroke: "rgba(220,220,220,1)",
-                backgroundColor: [
-                    'rgba(255, 255, 255, 0.2)',
-                    'rgba(255, 255, 255, 0.2)',
-                    'rgba(255, 255, 255, 0.2)',
-                    'rgba(255, 255, 255, 0.2)',
-                    'rgba(255, 255, 255, 0.2)',
-                    'rgba(255, 255, 255, 0.2)'
-                ],
-                borderColor: [
-                    'rgba(255, 255, 255, 1)',
-                    'rgba(255, 255, 255, 1)',
-                    'rgba(255, 255, 255, 1)',
-                    'rgba(255, 255, 255, 1)',
-                    'rgba(255, 255, 255, 1)',
-                    'rgba(255, 255, 255, 1)'
-                ],
-                borderWidth: 1,
-                data: [65, 59, 80, 81, 56, 55, 40]
-            },
-                {
-                    label: "My Second dataset",
-                    fillColor: "rgba(151,187,205,0.2)",
-                    strokeColor: "rgba(151,187,205,1)",
-                    pointColor: "rgba(151,187,205,1)",
-                    pointStrokeColor: "#fff",
-                    pointHighlightFill: "#fff",
-                    pointHighlightStroke: "rgba(151,187,205,1)",
-                    backgroundColor: [
-                        'rgba(255, 255, 255, 0.2)',
-                        'rgba(255, 255, 255, 0.2)',
-                        'rgba(255, 255, 255, 0.2)',
-                        'rgba(255, 255, 255, 0.2)',
-                        'rgba(255, 255, 255, 0.2)',
-                        'rgba(255, 255, 255, 0.2)'
-                    ],
-                    borderColor: [
-                        'rgba(255, 255, 255, 1)',
-                        'rgba(255, 255, 255, 1)',
-                        'rgba(255, 255, 255, 1)',
-                        'rgba(255, 255, 255, 1)',
-                        'rgba(255, 255, 255, 1)',
-                        'rgba(255, 255, 255, 1)'
-                    ],
-                    borderWidth: 1,
-                    data: [28, 48, 40, 19, 86, 27, 90]
-                }
-            ]
-        },
-        options: {
-            responsive: true
-        }
-    });
-    var ctxL2 = document.getElementById("sales").getContext('2d');
-    var myLineChart2 = new Chart(ctxL2, {
-        type: 'line',
-        data: {
-            labels: ["January", "February", "March", "April", "May", "June", "July"],
-            datasets: [{
-                label: "My First dataset",
-                fillColor: "rgba(220,220,220,0.2)",
-                strokeColor: "rgba(220,220,220,1)",
-                pointColor: "rgba(220,220,220,1)",
-                pointStrokeColor: "#fff",
-                pointHighlightFill: "#fff",
-                pointHighlightStroke: "rgba(220,220,220,1)",
-                backgroundColor: [
-                    'rgba(255, 255, 255, 0.2)',
-                    'rgba(255, 255, 255, 0.2)',
-                    'rgba(255, 255, 255, 0.2)',
-                    'rgba(255, 255, 255, 0.2)',
-                    'rgba(255, 255, 255, 0.2)',
-                    'rgba(255, 255, 255, 0.2)'
-                ],
-                borderColor: [
-                    'rgba(255, 255, 255, 1)',
-                    'rgba(255, 255, 255, 1)',
-                    'rgba(255, 255, 255, 1)',
-                    'rgba(255, 255, 255, 1)',
-                    'rgba(255, 255, 255, 1)',
-                    'rgba(255, 255, 255, 1)'
-                ],
-                borderWidth: 1,
-                data: [65, 59, 80, 81, 56, 55, 40]
-            },
-                {
-                    label: "My Second dataset",
-                    fillColor: "rgba(151,187,205,0.2)",
-                    strokeColor: "rgba(151,187,205,1)",
-                    pointColor: "rgba(151,187,205,1)",
-                    pointStrokeColor: "#fff",
-                    pointHighlightFill: "#fff",
-                    pointHighlightStroke: "rgba(151,187,205,1)",
-                    backgroundColor: [
-                        'rgba(255, 255, 255, 0.2)',
-                        'rgba(255, 255, 255, 0.2)',
-                        'rgba(255, 255, 255, 0.2)',
-                        'rgba(255, 255, 255, 0.2)',
-                        'rgba(255, 255, 255, 0.2)',
-                        'rgba(255, 255, 255, 0.2)'
-                    ],
-                    borderColor: [
-                        'rgba(255, 255, 255, 1)',
-                        'rgba(255, 255, 255, 1)',
-                        'rgba(255, 255, 255, 1)',
-                        'rgba(255, 255, 255, 1)',
-                        'rgba(255, 255, 255, 1)',
-                        'rgba(255, 255, 255, 1)'
-                    ],
-                    borderWidth: 1,
-                    data: [28, 48, 40, 19, 86, 27, 90]
-                }
-            ]
-        },
-        options: {
-            responsive: true
-        }
-    });
+    //installation
+    var ctxL3 = document.getElementById("install1").getContext('2d');
+    var ctxL4 = document.getElementById("install2").getContext('2d');
+    var ctxL5 = document.getElementById("install3").getContext('2d');
+    var ctxL6 = document.getElementById("install4").getContext('2d');
+    var myLineChart3 = new Chart(ctxL3, $graph3);
+    var myLineChart4 = new Chart(ctxL4, $graph3);
+    var myLineChart5 = new Chart(ctxL5, $graph4);
+    var myLineChart6 = new Chart(ctxL6, $graph3);
 });
 

@@ -81,10 +81,10 @@
                                 <li><a href="{{route('logs.index')}}" class="waves-effect">
                                         <span class="sv-normal">Logs</span></a>
                                 </li>
-                                <li><a href="#" class="waves-effect">
-                                        <span class="sv-slim"> W </span>
-                                        <span class="sv-normal">Write a message</span></a>
-                                </li>
+{{--                                <li><a href="#" class="waves-effect">--}}
+{{--                                        <span class="sv-slim"> W </span>--}}
+{{--                                        <span class="sv-normal">Write a message</span></a>--}}
+{{--                                </li>--}}
                             </ul>
                         </div>
                     </li>
