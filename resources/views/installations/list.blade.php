@@ -5,20 +5,21 @@
 @endsection
 
 @section('content')
+{{--    {{dd($installations)}}--}}
     <table class="mdDataTable table w-100">
         <thead>
         <th>ID</th>
         <th>Nom</th>
-        <th>Description</th>
-        <th>Ajouté&nbsp;le</th>
+        <th>Batiment</th>
+        <th>Equipements</th>
         <th>&nbsp;</th>
         </thead>
         <tbody>
         @foreach($installations as $installation)
             <td>{{$installation->id}}</td>
             <td>{{$installation->nom}}</td>
-            <td>{{$batiment->geolocalisation}}</td>
-            <td>{{$installation->created_at}}</td>
+            <td>{{$installation->batiment}}</td>
+            <td>{{$installation->equipements}}</td>
             <td><i class="fas fa-search"></i></td>
         @endforeach
         </tbody>
