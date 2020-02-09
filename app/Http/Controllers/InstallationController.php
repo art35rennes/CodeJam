@@ -73,7 +73,12 @@ class InstallationController extends Controller
                     ]);
                 }
             }
-            return redirect()->back();
+
+            return response()->json([
+                "success" => true,
+                "table" => "installations",
+                "data" => $inserted
+            ], 200);
         } else
         {
             try {
@@ -90,11 +95,7 @@ class InstallationController extends Controller
                 }
             }
 
-            return response()->json([
-                "success" => true,
-                "table" => "installations",
-                "data" => $inserted
-            ], 200);
+            return redirect()->back();
         }
     }
 
