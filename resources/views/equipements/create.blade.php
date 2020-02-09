@@ -20,8 +20,8 @@
                 <option value="0" disabled selected>Choisissez un produit</option>
                 @foreach($produits as $produit)
                     <option value="{{$produit->id}}">{{$produit->marque}} - {{$produit->reference}}</option>
-                    <option value="-1">Autre...</option>
                 @endforeach
+                <option value="-1">Autre...</option>
             </select>
             <div id="type_table">
                 <select id="type_table_select" class="mdb-select md-form" searchable="Rechercher ici.." name="equipement" required>

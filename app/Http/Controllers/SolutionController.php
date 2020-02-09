@@ -11,12 +11,15 @@ class SolutionController extends Controller
     public function index(Probleme $probleme)
     {
         return view('solutions.index', [
+            "probleme"=>$probleme,
             "solutions" => Solution::all()
         ]);
     }
 
-    public function create() {
-        return view('solutions.create');
+    public function create(Probleme $probleme) {
+        return view('solutions.create', [
+            "probleme"=>$probleme,
+        ]);
     }
 
     public function store(Probleme $probleme)

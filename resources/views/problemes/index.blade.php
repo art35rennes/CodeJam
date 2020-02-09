@@ -16,12 +16,14 @@
         </thead>
         <tbody>
         @foreach($problemes as $val)
+            <tr>
             <td>{{$val->id}}</td>
             <td>{{$val->nom}}</td>
             <td>{{$val->description}}</td>
             <td>{{$val->equipement}}</td>
             <td>{{$val->created_at}}</td>
             <td><a href="{{route('solutions.index', ['probleme'=>$val->id])}}"><i class="fas fa-search"></i></a></td>
+            </tr>
         @endforeach
         </tbody>
     </table>

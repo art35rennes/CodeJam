@@ -1,7 +1,7 @@
 @extends('layouts.dashboard')
 
 @section('page-name')
-    - Liste de vos solutions pour le problème #
+    - Liste de vos solutions pour le problème {{$probleme->id}}
 @endsection
 
 @section('content')
@@ -24,6 +24,6 @@
         </tbody>
     </table>
 
-    <a class="btn blue-gradient" href="{{ route("solutions.create", ['probleme'=>1]) }}">Ajouter un solution</a>
+    <a class="btn blue-gradient" href="{{ route("solutions.create", ['probleme'=>$probleme->id]) }}">Ajouter un solution</a>
 
 @endsection
