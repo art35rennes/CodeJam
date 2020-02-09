@@ -26,8 +26,8 @@ class Produit extends Model
     public function batterie($produitTypeId)
     {
         return DB::table('batteries')
-        ->select('batteries.id', 'tension_stockage', 'capacite_stockage ', 'type')
-        ->leftJoin('produits', 'panneaus.id', '=' ,'produits.type_id')
+        ->select('batteries.id', 'tension_stockage', 'capacite_stockage', 'batteries.type')
+        ->leftJoin('produits', 'batteries.id', '=' ,'produits.type_id')
         ->where('batteries.id', $produitTypeId)
         ->get();
     }

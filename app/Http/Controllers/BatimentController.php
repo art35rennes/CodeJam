@@ -16,7 +16,7 @@ class BatimentController extends Controller
     public function index()
     {
         return view('batiments.index', [
-            "batiments" => Batiment::find(auth()->user()),
+            "batiments" => Batiment::where('user_id', auth()->user()->id)->get(),
         ]);
     }
 
