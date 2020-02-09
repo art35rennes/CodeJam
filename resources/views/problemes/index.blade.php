@@ -21,7 +21,7 @@
             <td>{{$val->description}}</td>
             <td>{{$val->equipement}}</td>
             <td>{{$val->created_at}}</td>
-            <td><a href="{{route('solutions.index', ['problème'=>$val->id])}}"><i class="fas fa-search"></i></a></td>
+            <td><a href="{{route('solutions.index', ['probleme'=>$val->id])}}"><i class="fas fa-search"></i></a></td>
         @endforeach
         </tbody>
     </table>

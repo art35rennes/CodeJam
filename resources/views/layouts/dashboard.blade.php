@@ -75,12 +75,11 @@
                             </ul>
                         </div>
                     </li>
-                    <li><a class="collapsible-header waves-effect arrow-r"><i class="sv-slim-icon far fa-envelope"></i> Contact me<i class="fas fa-angle-down rotate-icon"></i></a>
+                    <li><a class="collapsible-header waves-effect arrow-r"><i class="sv-slim-icon fas fa-database"></i> Données<i class="fas fa-angle-down rotate-icon"></i></a>
                         <div class="collapsible-body">
                             <ul>
-                                <li><a href="#" class="waves-effect">
-                                        <span class="sv-slim"> F </span>
-                                        <span class="sv-normal">FAQ</span></a>
+                                <li><a href="{{route('logs.index')}}" class="waves-effect">
+                                        <span class="sv-normal">Logs</span></a>
                                 </li>
                                 <li><a href="#" class="waves-effect">
                                         <span class="sv-slim"> W </span>

@@ -16,8 +16,8 @@
                     <label for="materialRegisterFormFirstName">Nom</label>
                     @error('nom')
                     <span class="invalid-feed" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
+                        <strong>{{ $message }}</strong>
+                    </span>
                     @enderror
                 </div>
             </div>
@@ -52,6 +52,11 @@
 
 @section('js')
     <!-- MDBootstrap Steppers Pro  -->
+    <script>
+        $(document).ready(function () {
+            $('.mdb-select').materialSelect();
+        });
+    </script>
 @endsection
 @section('css')
 

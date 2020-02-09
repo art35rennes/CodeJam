@@ -51,7 +51,7 @@
                         <a class="nav-link" href="/#about-us">A propos du projet</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href=https://github.com/art35rennes/CodeJam/archive/master.zip" target="_blank">Télécharger</a>
+                        <a class="nav-link" href="https://github.com/art35rennes/CodeJam/archive/master.zip" target="_blank">Télécharger</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="https://github.com/art35rennes/CodeJam/blob/master/README.md" target="_blank">Tutorial</a>

@@ -1,7 +1,7 @@
 @extends('layouts.dashboard')
 
 @section('page-name')
-    - Ajout d'une solution au probleme {{$probleme}}
+    - Ajout d'une solution au probleme #
 @endsection
 
 @section('content')
