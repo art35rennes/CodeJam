@@ -52,7 +52,11 @@
 
 @section('js')
     <!-- MDBootstrap Steppers Pro  -->
-    <script type="text/javascript" src="{{URL::asset('/js/batiments/create.js')}}"></script>
+    <script>
+        $(document).ready(function () {
+            $('.mdb-select').materialSelect();
+        });
+    </script>
 @endsection
 @section('css')
 
