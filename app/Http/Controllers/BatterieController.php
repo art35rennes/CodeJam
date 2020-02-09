@@ -36,6 +36,7 @@ class BatterieController extends Controller
             if($errorCode == 1062){
                 return json_encode([
                     "message" => $e->getMessage(),
+                    "table" => "batteries",
                     "data" =>$inserted
                 ]);
             }
@@ -43,7 +44,7 @@ class BatterieController extends Controller
 
         return response()->json([
             "success" => true,
-            "id" => $inserted->id,
+            "table" => "batteries",
             "data" =>$inserted
         ], 200);
     }
@@ -79,6 +80,7 @@ class BatterieController extends Controller
             if($errorCode == 1062){
                 return json_encode([
                     "message" => $e->getMessage(),
+                    "table" => "batteries",
                     "data" =>$updated
                 ]);
             }
@@ -86,6 +88,7 @@ class BatterieController extends Controller
 
         return response()->json([
             "success" => $updated,
+            "table" => "batteries",
             "data" =>$updated
         ], 200);
     }

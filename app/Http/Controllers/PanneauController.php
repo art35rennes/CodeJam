@@ -93,7 +93,7 @@ class PanneauController extends Controller
 
         return response()->json([
             "success" => $updated,
-            "data" => $updated
+            "table" => "panneaux"
         ], 200);
     }
 

@@ -92,7 +92,8 @@ class ModelController extends Controller
             if($errorCode == 1062){
                 return json_encode([
                     "message" => $e->getMessage(),
-                    "data" => $updated
+                    "data" => $updated,
+                    "table" => "models"
                 ]);
             }
         }
