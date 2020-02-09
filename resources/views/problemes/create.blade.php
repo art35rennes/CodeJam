@@ -38,8 +38,8 @@
         <div id="type_table">
             <select id="type_table_select" class="mdb-select md-form" searchable="Rechercher ici.." name="equipement" required>
                 <option value="0" disabled selected>Choisissez un type</option>
-                <option value="1">Panneaux solaires</option>
-                <option value="2">Batteries</option>
+                <option value="panneau">Panneaux solaires</option>
+                <option value="batterie">Batteries</option>
             </select>
         </div>
 {{--        TODO add input file--}}

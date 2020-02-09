@@ -11,7 +11,7 @@ class SolutionController extends Controller
     public function index(Probleme $probleme)
     {
         return view('solutions.index', [
-            "probleme" => $probleme,
+            "probleme"=>$probleme,
             "solutions" => Solution::all()
         ]);
     }

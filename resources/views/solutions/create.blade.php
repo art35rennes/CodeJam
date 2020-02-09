@@ -1,12 +1,12 @@
 @extends('layouts.dashboard')
 
 @section('page-name')
-    - Ajout d'une solution au probleme #
+    - Ajout d'une solution au probleme {{$probleme->id}}
 @endsection
 
 @section('content')
 
-    <form class="form-data" id="batiment" method="POST" action="{{ route('solutions.store', ['probleme'=>$probleme]) }}">
+    <form class="form-data" id="batiment" method="POST" action="{{ route('solutions.store', ['probleme'=>$probleme->id]) }}">
         @csrf
         <div class="form-row">
             <div class="col-6">
