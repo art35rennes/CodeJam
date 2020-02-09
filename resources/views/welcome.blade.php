@@ -390,25 +390,22 @@
                     <!--/Grid row-->
                 </div>
                 <!--/Grid column-->
-
                 <!--Grid column-->
                 <div class="col-xl-3 col-lg-6">
                     <!--Grid row-->
                     <div class="row">
                         <div class="col-2">
-                            <i class="fas fa-code fa-2x mb-1 indigo-text" aria-hidden="true"></i>
+                            <i class="fas fa-cubes fa-2x mb-1 indigo-text" aria-hidden="true"></i>
                         </div>
                         <div class="col-10 mb-2">
-                            <h5 class="feature-title font-bold mb-1">jQuery 3.x</h5>
-                            <p class="grey-text mt-2">MDB is integrated with newest jQuery. Therefore you can use all the latest
-                                features which come along with
-                                it.
-                            </p>
+                            <h5 class="feature-title font-bold mb-1">Décompresser les sources</h5>
+                            <p class="grey-text mt-2">Décompresser les sources de manière à tout avoir dans un même dossier nommé <small>CodeJam</small> par exemple.</p>
                         </div>
                     </div>
                     <!--/Grid row-->
                 </div>
                 <!--/Grid column-->
+
 
             </div>
             <!--/First row-->
@@ -421,13 +418,28 @@
                     <!--Grid row-->
                     <div class="row">
                         <div class="col-2">
-                            <i class="fas fa-cubes fa-2x mb-1 indigo-text" aria-hidden="true"></i>
+                            <i class="fas fa-feather-alt fa-2x mb-1 indigo-text" aria-hidden="true"></i>
                         </div>
                         <div class="col-10 mb-2">
-                            <h5 class="feature-title font-bold mb-1">Modularity</h5>
-                            <p class="grey-text mt-2">Material Design for Bootstrap comes with both, compiled, ready to use
-                                libraries including all features as
-                                well as modules for CSS (SASS files) and JS.</p>
+                            <h5 class="feature-title font-bold mb-1">Apache 2</h5>
+                            <p class="grey-text mt-2">Configurer votre serveur Apache 2 ou équivalent pour pointer sur le fichier <small>CodeJam/public/index.php</small>
+                            </p>
+                        </div>
+                    </div>
+                    <!--/Grid row-->
+                </div>
+                <!--/Grid column-->
+
+                <!--Grid column-->
+                <div class="col-xl-3 col-lg-6">
+                    <!--Grid row-->
+                    <div class="row">
+                        <div class="col-2">
+                            <i class="fas fa-terminal fa-2x mb-1 indigo-text" aria-hidden="true"></i>
+                        </div>
+                        <div class="col-10 mb-2">
+                            <h5 class="feature-title font-bold mb-1">Acceder au site</h5>
+                            <p class="grey-text mt-2">Vous pouvez désormais accéder au site via l'url configurée dans votre serveur web</p>
                         </div>
                     </div>
                     <!--/Grid row-->
@@ -442,9 +454,10 @@
                             <i class="fas fa-question fa-2x mb-1 indigo-text" aria-hidden="true"></i>
                         </div>
                         <div class="col-10 mb-2">
-                            <h5 class="feature-title font-bold mb-1">Technical support</h5>
-                            <p class="grey-text mt-2">We care about reliability. If you have any questions - do not hesitate to
-                                contact us.
+                            <h5 class="feature-title font-bold mb-1">Support technique</h5>
+                            <p class="grey-text mt-2">+1 581-560-9595<br>
+                                arthur.sicard@outlook.fr<br>
+                                lagadecpa@gmail.com
                             </p>
                         </div>
                     </div>
@@ -452,32 +465,18 @@
                 </div>
                 <!--/Grid column-->
 
-                <!--Grid column-->
-                <div class="col-xl-3 col-lg-6">
-                    <!--Grid row-->
-                    <div class="row">
-                        <div class="col-2">
-                            <i class="fas fa-th fa-2x mb-1 indigo-text" aria-hidden="true"></i>
-                        </div>
-                        <div class="col-10 mb-2">
-                            <h5 class="feature-title font-bold mb-1">Flexbox</h5>
-                            <p class="grey-text mt-2">MDB fully supports Flex Box. You can forget about alignment issues.</p>
-                        </div>
-                    </div>
-                    <!--/Grid row-->
-                </div>
-                <!--/Grid column-->
+
 
                 <!--Grid column-->
                 <div class="col-xl-3 col-lg-6">
                     <!--Grid row-->
                     <div class="row">
                         <div class="col-2">
-                            <i class="far fa-file-code fa-2x mb-1 indigo-text" aria-hidden="true"></i>
+                            <i class="fas fa-smile-wink fa-2x mb-1 indigo-text" aria-hidden="true"></i>
                         </div>
                         <div class="col-10 mb-2">
-                            <h5 class="feature-title font-bold mb-1">SASS files</h5>
-                            <p class="grey-text mt-2">Arranged and well documented .scss files can't wait until you compile them.</p>
+                            <h5 class="feature-title font-bold mb-1">Enjoy !</h5>
+{{--                            <p class="grey-text mt-2">Arranged and well documented .scss files can't wait until you compile them.</p>--}}
                         </div>
                     </div>
                     <!--/Grid row-->
