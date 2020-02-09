@@ -9,8 +9,10 @@
         @csrf
         <select id="installation_id" class="mr-2 mdb-select md-form col-4" searchable="Rechercher ici.." required name="installation_id">
             <option value="0" disabled selected>Choisissez une installation</option>
-            @foreach($installations as $installation)
-                <option value="{{$installation->id}}">{{$installation->nom}}</option>
+            @foreach($batiments as $bat)
+                @foreach($bat->installations as $installation)
+                    <option value="{{$installation->id}}">{{$installation->nom}} - {{$bat->nom}}</option>
+                @endforeach
             @endforeach
         </select>
         <div class="md-form form-row">

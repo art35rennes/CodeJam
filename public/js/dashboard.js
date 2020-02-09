@@ -1,3 +1,4 @@
+
 //Charts init
 $(function () {
     $('.min-chart').easyPieChart({

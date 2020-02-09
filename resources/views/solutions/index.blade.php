@@ -1,7 +1,7 @@
 @extends('layouts.dashboard')
 
 @section('page-name')
-    - Liste de vos solutions pour le problème {{$probleme}}
+    - Liste de vos solutions pour le problème #
 @endsection
 
 @section('content')
@@ -19,11 +19,11 @@
             <td>{{$val->nom}}</td>
             <td>{{$val->description}}</td>
             <td>{{$val->created_at}}</td>
-            <td><a href="{{route('solutions.index', ['problème'=>$val->id])}}"><i class="fas fa-search"></i></a></td>
+            <td><a href="{{route('solutions.index', ['problème'=>$val->probleme_id])}}"><i class="fas fa-search"></i></a></td>
         @endforeach
         </tbody>
     </table>
 
-    <a class="btn blue-gradient" href="{{ route("solutions.create", ['probleme'=>$probleme]) }}">Ajouter un solution</a>
+    <a class="btn blue-gradient" href="{{ route("solutions.create", ['probleme'=>1]) }}">Ajouter un solution</a>
 
 @endsection
