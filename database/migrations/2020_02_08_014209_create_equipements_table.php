@@ -17,7 +17,7 @@ class CreateEquipementsTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('model_id');
             $table->unsignedBigInteger('installation_id');
-            $table->foreign('model_id')->references('id')->on('models');
+            $table->foreign('model_id')->references('id')->on('produits');
             $table->foreign('installation_id')->references('id')->on('installations');
             $table->date('date_installation')->nullable();
             $table->float('orientation')->nullable();

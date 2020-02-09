@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Batiment;
+use App\Produit;
 
 class BatimentController extends Controller
 {
@@ -19,7 +20,9 @@ class BatimentController extends Controller
     }
 
     public function create() {
-        return view('batiments.create');
+        return view('batiments.create', [
+            "models" => Produit::all(),
+        ]);
     }
 
     public function store()

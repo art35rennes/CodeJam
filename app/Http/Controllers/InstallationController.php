@@ -34,7 +34,8 @@ class InstallationController extends Controller
     public function index(Batiment $batiment)
     {
         return view('installations.index', [
-            "installations" => $batiment->installations()
+            "installations" => $batiment->installations(),
+            "models" => Produit::all()
         ]);
     }
 

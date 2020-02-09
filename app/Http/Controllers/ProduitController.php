@@ -2,15 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Database\Eloquent\Model;
+use App\Produit;
 use Illuminate\Database\QueryException;
 
-class ModelController extends Controller
+class ProduitController extends Controller
 {
     public function index()
     {
         return view('models.index', [
-            "models" => Model::all()
+            "models" => Produit::all()
         ]);
     }
 
@@ -36,7 +36,7 @@ class ModelController extends Controller
         $inserted = null;
 
         try {
-            $inserted = Model::create($data);
+            $inserted = Produit::create($data);
         } catch (QueryException $e) {
             $errorCode = $e->errorInfo[1];
             if($errorCode == 1062){
@@ -55,21 +55,21 @@ class ModelController extends Controller
         ], 200);
     }
 
-    public function show(Model $model)
+    public function show(Produit $model)
     {
         return view('models.show', [
             'model' => $model
         ]);
     }
 
-    public function edit(Model $model)
+    public function edit(Produit $model)
     {
         return view('models.edit', [
             'model' => $model
         ]);
     }
 
-    public function update(Model $model)
+    public function update(Produit $model)
     {
         $data = request()->$this->validate([
             'marque' => 'required',
@@ -105,7 +105,7 @@ class ModelController extends Controller
         ], 200);
     }
 
-    public function destroy(Model $model)
+    public function destroy(Produit $model)
     {
         $model->delete();
 
