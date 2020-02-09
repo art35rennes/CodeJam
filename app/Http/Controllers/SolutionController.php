@@ -18,7 +18,7 @@ class SolutionController extends Controller
 
     public function create(Probleme $probleme) {
         return view('solutions.create', [
-            "probleme"=>$probleme,
+            "probleme" => $probleme,
         ]);
     }
 

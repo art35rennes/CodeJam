@@ -41,6 +41,9 @@ class ProblemeController extends Controller
             }
         }
 
+
+
+
         if (!request()->request->has("ajax"))
         {
             return redirect()->back();
