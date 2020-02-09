@@ -238,7 +238,7 @@
                         </div>
                         <div class="col-10">
                             <h6 class="feature-title">Dashbord</h6>
-                            <p class="grey-text">Une fois connecté vous avez accès via l'URL "/home". Tout les graphiques sont fonctionnel et interactif. Les données affiché sont prédéfinie.</p>
+                            <p class="grey-text">Une fois connecté vous avez accès via votre bouton de profil. Tout les graphiques sont fonctionnel et interactif. Les données affiché sont prédéfinie.</p>
                             <div style="height:15px"></div>
                         </div>
                     </div>
@@ -301,8 +301,8 @@
                             <i class="fas fa-check-circle fa-2x indigo-text"></i>
                         </div>
                         <div class="col-10">
-                            <h6 class="feature-title">Easy installation</h6>
-                            <p class="grey-text">5 minutes, a few clicks and... done. You will be surprised at how easy it is.
+                            <h6 class="feature-title">CRUD</h6>
+                            <p class="grey-text">Toute les tables peuvent être peuplé et visualisé via different formulaire personalisé pour prendre en compte les relations et faciliter le Mass Assignement.
                             </p>
                             <div style="height:15px"></div>
                         </div>
@@ -315,10 +315,8 @@
                             <i class="fas fa-check-circle fa-2x indigo-text"></i>
                         </div>
                         <div class="col-10">
-                            <h6 class="feature-title">Easy to use and customize</h6>
-                            <p class="grey-text">Using MDB is straightforward and pleasant. Components flexibility allows you deep
-                                customization. You will
-                                easily adjust each component to suit your needs.</p>
+                            <h6 class="feature-title">Ergonomique</h6>
+                            <p class="grey-text">Malgré les 48h pour réaliser ce projet nous avons fais au mieux pour concevoir des interfaces clair, fluide et user-friendly.</p>
                             <div style="height:15px"></div>
                         </div>
                     </div>
@@ -337,7 +335,7 @@
         <!--Section: More-->
         <section>
 
-            <h2 class="my-5 h3 text-center">...and even more</h2>
+            <h2 class="my-5 h3 text-center">Installation</h2>
 
             <!--First row-->
             <div class="row features-small mt-5 wow fadeIn">
@@ -347,12 +345,11 @@
                     <!--Grid row-->
                     <div class="row">
                         <div class="col-2">
-                            <i class="fab fa-firefox fa-2x mb-1 indigo-text" aria-hidden="true"></i>
+                            <i class="fas fa-download fa-2x mb-1 indigo-text" aria-hidden="true"></i>
                         </div>
                         <div class="col-10 mb-2 pl-3">
-                            <h5 class="feature-title font-bold mb-1">Cross-browser compatibility</h5>
-                            <p class="grey-text mt-2">Chrome, Firefox, IE, Safari, Opera, Microsoft Edge - MDB loves all browsers;
-                                all browsers love MDB.
+                            <h5 class="feature-title font-bold mb-1">Télécharger les sources</h5>
+                            <p class="grey-text mt-2">Récupérer les sources présente sur le dépot FTP où GitHub.
                             </p>
                         </div>
                     </div>
@@ -365,12 +362,11 @@
                     <!--Grid row-->
                     <div class="row">
                         <div class="col-2">
-                            <i class="fas fa-level-up-alt fa-2x mb-1 indigo-text" aria-hidden="true"></i>
+                            <i class="fas fa-database fa-2x mb-1 indigo-text" aria-hidden="true"></i>
                         </div>
                         <div class="col-10 mb-2">
-                            <h5 class="feature-title font-bold mb-1">Frequent updates</h5>
-                            <p class="grey-text mt-2">MDB becomes better every month. We love the project and enhance as much as
-                                possible.
+                            <h5 class="feature-title font-bold mb-1">Configurer la base de données</h5>
+                            <p class="grey-text mt-2">Le site necessite une base de données MySQL 5.7. Généré la base en important le fichier <small>earthquake.sql</small><br>Si la base n'est pas local, modifier le fichier <small>.env</small>
                             </p>
                         </div>
                     </div>
@@ -383,12 +379,11 @@
                     <!--Grid row-->
                     <div class="row">
                         <div class="col-2">
-                            <i class="fas fa-comments fa-2x mb-1 indigo-text" aria-hidden="true"></i>
+                            <i class="fas fa-user fa-2x mb-1 indigo-text" aria-hidden="true"></i>
                         </div>
                         <div class="col-10 mb-2">
-                            <h5 class="feature-title font-bold mb-1">Active community</h5>
-                            <p class="grey-text mt-2">Our society grows day by day. Visit our forum and check how it is to be a
-                                part of our family.
+                            <h5 class="feature-title font-bold mb-1">Ajouter un user à la base</h5>
+                            <p class="grey-text mt-2">Ajouter un utilisateur a votre base données qui à tout les droits sur <small>codejam</small>.<br><small>User: codejam</small><br><small>Password: jloZEozLRDczAlbR</small>
                             </p>
                         </div>
                     </div>
