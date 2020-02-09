@@ -74,7 +74,7 @@ Route::delete('/produits/{produit}', 'ProduitController@destroy')->name('produit
 
 //Equipements
 Route::get('/equipements', 'EquipementController@index')->name('equipements.index');
-Route::get('/equipements/list', 'EquipementController@index')->name('equipements.list');
+Route::get('/equipements/list', 'EquipementController@list')->name('equipements.list');
 Route::get('/equipements/create', 'EquipementController@create')->name('equipements.create');
 Route::post('/equipements', 'EquipementController@store')->name('equipements.store');
 Route::get('/equipements/{produit}', 'EquipementController@show')->name('equipements.show');
