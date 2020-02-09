@@ -24,7 +24,7 @@
                 <option value="-1">Autre...</option>
             </select>
             <div id="type_table">
-                <select id="type_table_select" class="mdb-select md-form" searchable="Rechercher ici.." name="equipement" required>
+                <select id="type_table_select" class="mdb-select md-form" searchable="Rechercher ici.." name="equipement">
                     <option value="0" disabled selected>Choisissez un type</option>
                     <option value="1">Panneaux solaires</option>
                     <option value="2">Batteries</option>
@@ -97,27 +97,27 @@
             <div class="form-row">
                 {{--Panneaux--}}
                 <div class="md-form">
-                    <input type="number" name="puissance_nominal" id="puissance_nominal" class="form-control modelForm">
+                    <input type="number" name="puissance_nominal" id="puissance_nominale" class="form-control modelForm">
                     <label for="puissance_nominal">Puissance nominal</label>
                 </div>
                 <div class="md-form">
-                    <input type="number" name="tension_nominal" id="tension_nominal" class="form-control modelForm">
+                    <input type="number" name="tension_nominal" id="tension_nominale" class="form-control modelForm">
                     <label for="tension_nominal">Tension nominal</label>
                 </div>
                 <div class="md-form">
-                    <input type="number" name="tension_max" id="tension_max" class="form-control modelForm">
+                    <input type="number" name="tension_max" id="tension_maximal" class="form-control modelForm">
                     <label for="tension_max">Tension max</label>
                 </div>
                 <div class="md-form">
-                    <input type="number" name="courant_max" id="courant_max" class="form-control modelForm">
+                    <input type="number" name="courant_max" id="courant_maximal" class="form-control modelForm">
                     <label for="courant_max">Courant max</label>
                 </div>
                 <div class="md-form">
-                    <input type="number" name="tension_co" id="tension_co" class="form-control modelForm">
-                    <label for="tension_co">Tension court-ouvert</label>
+                    <input type="number" name="tension_co" id="tension_circuit_ouvert" class="form-control modelForm">
+                    <label for="tension_co">Tension circuit-ouvert</label>
                 </div>
                 <div class="md-form">
-                    <input type="number" name="courant_cc" id="courant_cc" class="form-control modelForm">
+                    <input type="number" name="courant_cc" id="courant_court_circuit" class="form-control modelForm">
                     <label for="courant_cc">Courant-court-ciruit</label>
                 </div>
             </div>
@@ -155,7 +155,7 @@
         $("#type_table, #equipement_div, #modele_div, #ps_div, #cell_div").hide();
     });
     $('#type_table_select').change(function () {
-        $(this).val()>=0?$("#equipement_div, #modele_div").show(100):null;
+        $(this).val()>=0?$("#modele_div").show(100):null;
         if($(this).val()==="1") {
             $("#ps_div").show(100);
             $("#cell_div").hide(100);
@@ -166,9 +166,8 @@
             }else{
                 $("#ps_div").hide(100);
                 $("#cell_div").hide(100);
-                $("#equipement_div").show(100);
             }
-
+            $("#equipement_div").show(100);
         }
     });
     $('#model').change(function () {
