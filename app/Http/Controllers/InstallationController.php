@@ -16,14 +16,25 @@ class InstallationController extends Controller
 
     public function list()
     {
-        $list = DB::table('equipements')
+        DB::enableQueryLog();
+        $userId = auth()->user()->id;
+        /*$list = DB::table('equipements')
             ->select('installations.id', 'installations.nom', 'batiments.nom as batiment', DB::raw('count(equipements.produit_id) as equipements'))
             ->leftJoin('installations', 'installations.id', '=' , 'equipements.installation_id')
             ->leftJoin('batiments', 'batiments.id', '=', 'installations.batiment_id')
-            ->where('batiments.user_id', '=', auth()->user()->id)
+            ->where('batiments.user_id', $userId)
             ->groupBy('installations.id')
             ->get();
-
+*/
+        $list = DB::select(DB::raw("
+            select `installations`.`id`, `installations`.`nom`, `batiments`.`nom` as `batiment`, count(equipements.produit_id) as equipements
+            from `equipements`
+            left join `installations`
+            on `installations`.`id` = `equipements`.`installation_id`
+            left join `batiments`
+            on `batiments`.`id` = `installations`.`batiment_id`
+            where `batiments`.`user_id` = $userId
+            group by `installations`.`id`"));
 
         return view('installations.list', [
             "installations" => $list
