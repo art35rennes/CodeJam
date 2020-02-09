@@ -1,12 +1,12 @@
 @extends('layouts.dashboard')
 
 @section('page-name')
-    - Ajout d'une nouvel installation
+    - Ajout d'une nouveau problème
 @endsection
 
 @section('content')
 
-    <form class="form-data" id="batiment" method="POST" action="{{ route('batiments.store') }}">
+    <form class="form-data" id="batiment" method="POST" action="{{ route('problemes.store') }}">
         @csrf
         <div class="form-row">
             <div class="col-6">
@@ -29,20 +29,20 @@
                 <label for="form7">Description <span class="text-muted">(facultatif)</span></label>
                 @error('description')
                 <span class="invalid-feed" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
+                    <strong>{{ $message }}</strong>
+                </span>
                 @enderror
             </div>
         </div>
 
-        <div id="form-row">
-            <select name="batiment_id" class="mdb-select md-form col-4">
-                <option value="" disabled selected>Choisissez un batiment</option>
-                @foreach($batiments as $batiment)
-                    <option value="{{$batiment->id}}">{{$batiment->nom}}</option>
-                @endforeach
+        <div id="type_table">
+            <select id="type_table_select" class="mdb-select md-form" searchable="Rechercher ici.." name="equipement" required>
+                <option value="0" disabled selected>Choisissez un type</option>
+                <option value="1">Panneaux solaires</option>
+                <option value="2">Batteries</option>
             </select>
         </div>
+{{--        TODO add input file--}}
 
         <button class="btn blue-gradient" type="submit">Ajouter</button>
     </form>
@@ -52,7 +52,6 @@
 
 @section('js')
     <!-- MDBootstrap Steppers Pro  -->
-    <script type="text/javascript" src="{{URL::asset('/js/batiments/create.js')}}"></script>
 @endsection
 @section('css')
 

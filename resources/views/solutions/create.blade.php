@@ -1,12 +1,12 @@
 @extends('layouts.dashboard')
 
 @section('page-name')
-    - Ajout d'une nouvel installation
+    - Ajout d'une solution au probleme {{$probleme}}
 @endsection
 
 @section('content')
 
-    <form class="form-data" id="batiment" method="POST" action="{{ route('batiments.store') }}">
+    <form class="form-data" id="batiment" method="POST" action="{{ route('solutions.store', ['probleme'=>$probleme]) }}">
         @csrf
         <div class="form-row">
             <div class="col-6">
@@ -35,15 +35,6 @@
             </div>
         </div>
 
-        <div id="form-row">
-            <select name="batiment_id" class="mdb-select md-form col-4">
-                <option value="" disabled selected>Choisissez un batiment</option>
-                @foreach($batiments as $batiment)
-                    <option value="{{$batiment->id}}">{{$batiment->nom}}</option>
-                @endforeach
-            </select>
-        </div>
-
         <button class="btn blue-gradient" type="submit">Ajouter</button>
     </form>
 
@@ -52,7 +43,6 @@
 
 @section('js')
     <!-- MDBootstrap Steppers Pro  -->
-    <script type="text/javascript" src="{{URL::asset('/js/batiments/create.js')}}"></script>
 @endsection
 @section('css')
 
