@@ -49,35 +49,23 @@ class InstallationController extends Controller
         ]);
     }
 
-    public function store(Batiment $batiment)
+    public function store()
     {
         $data = request()->validate([
             'nom' => 'required',
-            'description' => ''
+            'description' => '',
+            'batiment_id' => ''
         ]);
+
         $inserted = null;
 
-        if(!(Batiment::find($batiment)->isEmpty())) {
-            try {
-                $inserted = $batiment->installations()->create($data);
-            } catch (QueryException $e) {
-                $errorCode = $e->errorInfo[1];
-                if($errorCode == 1062){
-                    return json_encode([
-                        "message" => $e->getMessage(),
-                        "table" => "installations",
-                        "data" => $inserted
-                    ]);
-                }
-            }
-        } else
+        if (request()->request->has("ajax"))
         {
-            try
-            {
+            try {
                 $inserted = auth()->user()->dernierBatiment->installations()->create($data);
             } catch (QueryException $e) {
                 $errorCode = $e->errorInfo[1];
-                if($errorCode == 1062){
+                if ($errorCode == 1062) {
                     return json_encode([
                         "message" => $e->getMessage(),
                         "table" => "installations",
@@ -85,13 +73,23 @@ class InstallationController extends Controller
                     ]);
                 }
             }
-        }
-
-        if (!request()->request->has("ajax"))
-        {
             return redirect()->back();
         } else
         {
+            try {
+                $batiment = Batiment::find($data['batiment_id']);
+                $inserted = $batiment->installations()->create($data);
+            } catch (QueryException $e) {
+                $errorCode = $e->errorInfo[1];
+                if ($errorCode == 1062) {
+                    return json_encode([
+                        "message" => $e->getMessage(),
+                        "table" => "installations",
+                        "data" => $inserted
+                    ]);
+                }
+            }
+
             return response()->json([
                 "success" => true,
                 "table" => "installations",
