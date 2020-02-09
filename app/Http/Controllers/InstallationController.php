@@ -26,15 +26,9 @@ class InstallationController extends Controller
             ->groupBy('installations.id')
             ->get();
 */
-        $list = DB::select(DB::raw("
-            select `installations`.`id`, `installations`.`nom`, `batiments`.`nom` as `batiment`, count(equipements.produit_id) as equipements
-            from `equipements`
-            left join `installations`
-            on `installations`.`id` = `equipements`.`installation_id`
-            left join `batiments`
-            on `batiments`.`id` = `installations`.`batiment_id`
-            where `batiments`.`user_id` = $userId
-            group by `installations`.`id`"));
+        $list = DB::select(DB::raw("select `installations`.`id`, `installations`.`nom`, `batiments`.`nom` as `batiment`, count(equipements.produit_id) as equipements from `installations` left join `equipements` on `installations`.`id` = `equipements`.`installation_id` left join `batiments` on `batiments`.`id` = `installations`.`batiment_id` where `batiments`.`user_id` = $userId group by `installations`.`id`"));
+
+        //dd(DB::getQueryLog());
 
         return view('installations.list', [
             "installations" => $list

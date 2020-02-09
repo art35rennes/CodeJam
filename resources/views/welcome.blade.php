@@ -29,7 +29,7 @@
                         </p>
 
                         <p class="mb-4 d-none d-md-block">
-                            <strong>L'impact sur la biodiversité de l'installation d'équipements de la production d'énergie renouvelable est bien souvent négligée, découvrez les enjeux et comment adapter vos pratiques.</strong>
+                            <strong>L'impact sur la biodiversité de l'installation d'équipements produisant de l'énergie verte est bien souvent négligée. Découvrez les enjeux et comment adapter vos pratiques.</strong>
                         </p>
 
                         <a target="_blank" href="http://bl-evolution.com/energies-renouvelables-impacts-biodiversite/" class="btn btn-outline-white">En savoir plus sur les enjeux
