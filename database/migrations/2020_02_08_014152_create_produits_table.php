@@ -24,7 +24,7 @@ class CreateProduitsTable extends Migration
             $table->float('profondeur')->nullable();
             $table->float('poids')->nullable();
             $table->float('rendement')->nullable();
-            $table->string('equipement');
+            $table->string('equipement')->nullable();
             $table->boolean('certifie')->default(false);
             $table->timestamps();
             $table->engine = 'InnoDB';

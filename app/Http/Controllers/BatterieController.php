@@ -21,34 +21,37 @@ class BatterieController extends Controller
 
     public function store()
     {
-        if(!request()->has("ajax")) return view('batteries.index');
-
         $data = request()->validate([
             'produit_id' => 'required',
             'tension_stockage' => 'required',
             'capacite_stockage' => 'required'
-            ]);
+        ]);
 
         $inserted = null;
-
         try {
             $inserted = Batterie::create($data);
         } catch (QueryException $e) {
             $errorCode = $e->errorInfo[1];
-            if($errorCode == 1062){
+            if ($errorCode == 1062) {
                 return json_encode([
                     "message" => $e->getMessage(),
                     "table" => "batteries",
-                    "data" =>$inserted
+                    "data" => $inserted
                 ]);
             }
         }
 
-        return response()->json([
-            "success" => true,
-            "table" => "batteries",
-            "data" =>$inserted
-        ], 200);
+        if (!request()->request->has("ajax"))
+        {
+            return redirect()->back();
+        } else
+        {
+            return response()->json([
+                "success" => true,
+                "table" => "batteries",
+                "data" => $inserted
+            ], 200);
+        }
     }
 
     public function show(Batterie $batterie)

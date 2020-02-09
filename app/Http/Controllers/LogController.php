@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Log;
+use Illuminate\Database\QueryException;
 
 class LogController extends Controller
 {
@@ -32,11 +33,31 @@ class LogController extends Controller
             'consommation' => 'required'
         ]);
 
-        dd($data);
+        $inserted = null;
+        try {
+            $inserted = Log::create($data);
+        } catch (QueryException $e) {
+            $errorCode = $e->errorInfo[1];
+            if ($errorCode == 1062) {
+                return json_encode([
+                    "message" => $e->getMessage(),
+                    "table" => "logs",
+                    "data" => $inserted
+                ]);
+            }
+        }
 
-        Log::create($data);
-
-        return view('logs.index');
+        if (!request()->request->has("ajax"))
+        {
+            return redirect()->back();
+        } else
+        {
+            return response()->json([
+                "success" => true,
+                "table" => "logs",
+                "data" => $inserted
+            ], 200);
+        }
     }
 
     public function show(Log $log)

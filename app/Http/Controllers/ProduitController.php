@@ -21,8 +21,6 @@ class ProduitController extends Controller
 
     public function store()
     {
-        if(!request()->has("ajax")) return view('produits.index');
-
         $data = request()->validate([
             'marque' => 'required',
             'reference' => 'required',
@@ -36,7 +34,6 @@ class ProduitController extends Controller
         ]);
 
         $inserted = null;
-
         try {
             $inserted = Produit::create($data);
         } catch (QueryException $e) {
@@ -51,11 +48,17 @@ class ProduitController extends Controller
             }
         }
 
-        return response()->json([
-            "success" => true,
-            "table" => "produits",
-            "data" => $inserted
-        ], 200);
+        if (!request()->request->has("ajax"))
+        {
+            return redirect()->back();
+        } else
+        {
+            return response()->json([
+                "success" => true,
+                "table" => "produits",
+                "data" => $inserted
+            ], 200);
+        }
     }
 
     public function show(Produit $produit)

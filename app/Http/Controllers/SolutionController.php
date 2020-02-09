@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Probleme;
 use App\Solution;
+use Illuminate\Database\QueryException;
 
 class SolutionController extends Controller
 {
@@ -20,17 +21,38 @@ class SolutionController extends Controller
 
     public function store(Probleme $probleme)
     {
-        if(!request()->has("ajax")) return view('solutions.index');
-
         $data = request()->validate([
             'nom' => 'required',
             'description' => '',
             'media' => ''
         ]);
 
-        $probleme->solutions()->create($data);
+        $inserted = null;
+        try {
+            $inserted = $probleme->solutions()->create($data);
+        } catch (QueryException $e) {
+            $errorCode = $e->errorInfo[1];
+            if($errorCode == 1062){
+                $inserted = "catch";
+                return json_encode([
+                    "message" => $e->getMessage(),
+                    "table" => "solutions",
+                    "data" => $inserted
+                ]);
+            }
+        }
 
-        return view('solutions.index');
+        if (!request()->request->has("ajax"))
+        {
+            return redirect()->back();
+        } else
+        {
+            return response()->json([
+                "success" => true,
+                "table" => "solutions",
+                "data" => $inserted
+            ], 200);
+        }
     }
 
     public function show(Probleme $probleme, Solution $solution)

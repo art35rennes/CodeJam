@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Batterie;
 use App\Equipement;
+use App\Panneau;
 use App\Produit;
 use Illuminate\Database\QueryException;
 
@@ -39,15 +41,14 @@ class EquipementController extends Controller
     public function create()
     {
         $batiments = auth()->user()->batiments;
-        $installations = [];
 
-        foreach ($batiments as $batiment)
+        for ($i=0 ; $i < count($batiments) ; $i++)
         {
-            array_push($installations, $batiment);
+            $batiments[$i]["installations"] = $batiments[$i]->installations;
         }
 
         return view('equipements.create', [
-            "installations" => $installations,
+            "batiments" => $batiments,
             "produits" => Produit::all()
         ]);
     }
@@ -57,17 +58,111 @@ class EquipementController extends Controller
         if(!request()->has("ajax")) return view('equipements.index');
 
         $data = request()->validate([
+            'installation_id' => "required",
             'produit_id' => 'required',
-            'installation_id' => 'required',
-            'date_installation' => '',
-            'orientation' => '',
-            'geolocalisation' => '',
-            'elevation' => '',
-            'inclinaison' => ''
+            'equipement' => 'required',
+            "date_installation" => '',
+            "geolocalisation" => '',
+            "orientation" => '',
+            "elevation" => '',
+           "inclinaison" => '',
+           "marque" => '',
+           "reference" => '',
+           "largeur" => '',
+           "longueur" => '',
+           "hauteur" => '',
+           "poids" => '',
+           "rendement" => '',
+           "puissance_nominal" => '',
+           "tension_nominal" => '',
+           "tension_max" => '',
+           "courant_max" => '',
+           "tension_co" => '',
+           "courant_cc" => '',
+           "tension_stockage" => '',
+           "capacite_stockage" => ''
         ]);
 
-        $inserted = null;
+        $produitData = [
+            "marque" => $data["marque"],
+            "reference" => $data["reference"],
+            "largeur" => $data["largeur"],
+            "longueur" => $data["longueur"],
+            "hauteur" => $data["hauteur"],
+            "poids" => $data["poids"],
+            "rendement" => $data["rendement"],
+            "equipement" => $data["equipement"]
+        ];
 
+        if($data["equipement"] == -1)
+        {
+            $produitData["equipement"] = null;
+        }
+
+        $equipementData = [
+            "installation_id" => $data["installation_id"],
+            "date_installation" => $data["date_installation"],
+            "geolocalisation" => $data["geolocalisation"],
+            "orientation" => $data["orientation"],
+            "elevation" => $data["elevation"],
+            "inclinaison" => $data["inclinaison"],
+        ];
+
+        $newProduit = ($data["produit_id"] == -1 ? true : false);
+
+        if($newProduit)
+        {
+            $produit = Produit::create($produitData);
+            $equipementData["produit_id"] = $produit->id;
+        } else
+        {
+            $equipementData["produit_id"] = $data["produit_id"];
+        }
+
+        switch ($data["equipement"])
+        {
+            case 1:
+                $panneauData = [
+                    "puissance_nominal" => $data["puissance_nominal"],
+                    "tension_nominal" => $data["tension_nominal"],
+                    "tension_max" => $data["tension_max"],
+                    "courant_max" => $data["courant_max"],
+                    "tension_co" => $data["tension_co"],
+                    "courant_cc" => $data["courant_cc"]
+                ];
+
+                if($newProduit)
+                {
+                    $panneauData["produit_id"] = $produit->id;
+                } else
+                {
+                    $panneauData["produit_id"] = $data["produit_id"];
+                }
+
+                Panneau::create($panneauData);
+                break;
+
+            case 2:
+                $batterieData = [
+                    "tension_stockage" => $data["tension_stockage"],
+                    "capacite_stockage" => $data["capacite_stockage"],
+                    "type" => $data["type"]
+                ];
+
+                if($newProduit)
+                {
+                    $batterieData["produit_id"] = $produit->id;
+
+                } else
+                {
+                    $batterieData["produit_id"] = $data["produit_id"];
+                }
+
+                Batterie::create($batterieData);
+                break;
+        }
+
+        $inserted = null;
         try {
             $inserted = Equipement::create($data);
         } catch (QueryException $e) {
@@ -75,17 +170,26 @@ class EquipementController extends Controller
             if($errorCode == 1062){
                 return json_encode([
                     "message" => $e->getMessage(),
-                    "table" => "batteries",
+                    "table" => "equipements",
                     "data" => $inserted
                 ]);
             }
         }
 
-        return response()->json([
-            "success" => true,
-            "table" => "equipements",
-            "data" => $inserted
-        ], 200);
+        if (!request()->request->has("ajax"))
+        {
+            return redirect()->back();
+        } else
+        {
+            return response()->json([
+                "success" => true,
+                "table" => "equipements",
+                "data" => $inserted
+            ], 200);
+        }
+
+
+
     }
 
     public function show(Equipement $equipement)
