@@ -38,7 +38,8 @@ class EquipementController extends Controller
 
     public function create()
     {
-        $batiments = auth()->user()->batiments();
+        $batiments = auth()->user()->batiments;
+        $installations = [];
 
         foreach ($batiments as $batiment)
         {

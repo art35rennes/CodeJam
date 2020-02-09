@@ -60,9 +60,9 @@
                                 <li><a href="{{ route('installations.list') }}" class="waves-effect">
                                         <span class="sv-normal">Installations</span></a>
                                 </li>
-{{--                                <li><a href="{{ route('equipements.index') }}" class="waves-effect">--}}
-{{--                                        <span class="sv-normal">Equipements</span></a>--}}
-{{--                                </li>--}}
+                                <li><a href="{{ route('equipements.list') }}" class="waves-effect">
+                                        <span class="sv-normal">Equipements</span></a>
+                                </li>
                             </ul>
                         </div>
                     </li>
