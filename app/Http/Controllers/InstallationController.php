@@ -33,20 +33,19 @@ class InstallationController extends Controller
     public function index(Batiment $batiment)
     {
         return view('installations.index', [
-            "installations" => $batiment->installations(),
+            "installations" => $batiment->installations,
             "produits" => Produit::all()
         ]);
     }
 
     public function create() {
         return view('installations.create', [
-            "batiments" => auth()->user()->batiments()
+            "batiments" => auth()->user()->batiments
         ]);
     }
 
     public function store(Batiment $batiment)
     {
-
         if(!request()->has("ajax")) return view('installations.index');
 
         if(!(Batiment::find($batiment)->isEmpty())) {

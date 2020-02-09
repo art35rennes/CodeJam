@@ -74,7 +74,7 @@ class EquipementController extends Controller
             if($errorCode == 1062){
                 return json_encode([
                     "message" => $e->getMessage(),
-                    "table" => "batteries",
+                    "table" => "equipements",
                     "data" => $inserted
                 ]);
             }

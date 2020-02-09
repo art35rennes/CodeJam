@@ -38,7 +38,7 @@ Route::delete('/batiments/{batiment}', 'BatimentController@destroy')->name('bati
 //Installation
 Route::get('/installations', 'InstallationController@list')->name('installations.list');
 Route::get('/batiments/{batiment}/installations', 'InstallationController@index')->name('installations.index');
-Route::get('/batiments/{batiment}/installations/create', 'InstallationController@create')->name('installations.create');
+Route::get('/batiments/installations/create', 'InstallationController@create')->name('installations.create');
 Route::post('/batiments/installations/{batiment?}', 'InstallationController@store')->name('installations.store');
 Route::get('/batiments/{batiment}/installations/{installation}', 'InstallationController@show')->name('installations.show');
 Route::get('/batiments/{batiment}/installations/{installation}/edit', 'InstallationController@edit')->name('installations.edit');
