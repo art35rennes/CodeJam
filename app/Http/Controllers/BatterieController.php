@@ -21,6 +21,8 @@ class BatterieController extends Controller
 
     public function store()
     {
+        if(!request()->has("ajax")) return view('batteries.index');
+
         $data = request()->validate([
             'produit_id' => 'required',
             'tension_stockage' => 'required',

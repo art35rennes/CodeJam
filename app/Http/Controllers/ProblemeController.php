@@ -19,6 +19,8 @@ class ProblemeController extends Controller
 
     public function store()
     {
+        if(!request()->has("ajax")) return view('problemes.index');
+
         $data = request()->validate([
             'nom' => 'required',
             'description' => '',

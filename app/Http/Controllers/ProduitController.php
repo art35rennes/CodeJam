@@ -21,6 +21,8 @@ class ProduitController extends Controller
 
     public function store()
     {
+        if(!request()->has("ajax")) return view('produits.index');
+
         $data = request()->validate([
             'marque' => 'required',
             'reference' => 'required',
@@ -34,7 +36,6 @@ class ProduitController extends Controller
         ]);
 
         $inserted = null;
-
 
         try {
             $inserted = Produit::create($data);

@@ -21,6 +21,8 @@ class PanneauController extends Controller
 
     public function store()
     {
+        if(!request()->has("ajax")) return view('panneaux.index');
+
         $data = request()->validate([
             'produit_id' => 'required',
             'puissance_nominale' => 'required',

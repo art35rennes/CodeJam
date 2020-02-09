@@ -24,7 +24,6 @@ class InstallationController extends Controller
             ->groupBy('installations.id')
             ->get();
 
-        dd($list);
 
         return view('installations.list', [
             "installations" => $list
@@ -40,11 +39,16 @@ class InstallationController extends Controller
     }
 
     public function create() {
-        return view('installations.create');
+        return view('installations.create', [
+            "batiments" => auth()->user()->batiments()
+        ]);
     }
 
     public function store(Batiment $batiment)
     {
+
+        if(!request()->has("ajax")) return view('installations.index');
+
         if(!(Batiment::find($batiment)->isEmpty())) {
             $data = request()->validate([
                 'nom' => 'required',
@@ -118,8 +122,6 @@ class InstallationController extends Controller
             'nom' => 'required',
             'description' => ''
         ]);
-
-        dd($data);
 
         $installation->update($data);
 

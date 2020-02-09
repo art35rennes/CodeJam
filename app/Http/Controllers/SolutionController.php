@@ -20,6 +20,8 @@ class SolutionController extends Controller
 
     public function store(Probleme $probleme)
     {
+        if(!request()->has("ajax")) return view('solutions.index');
+
         $data = request()->validate([
             'nom' => 'required',
             'description' => '',

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Equipement;
+use App\Produit;
 use Illuminate\Database\QueryException;
 
 class EquipementController extends Controller
@@ -14,13 +15,46 @@ class EquipementController extends Controller
         ]);
     }
 
+    public function list()
+    {
+        $equipements = Equipement::all();
+        $returnArray = [];
+
+
+        foreach ($equipements as $equipement)
+        {
+            $arrayFormat = [
+                "equipement" => $equipement,
+                "produit" => $equipement->produit(),
+                "installation" => $equipement->installation()
+            ];
+            array_push($returnArray, $arrayFormat);
+        }
+
+        return view('equipement.list', [
+            "equipements" => $returnArray
+        ]);
+    }
+
     public function create()
     {
-        return view('equipements.create');
+        $batiments = auth()->user()->batiments();
+
+        foreach ($batiments as $batiment)
+        {
+            array_push($installations, $batiment);
+        }
+
+        return view('equipements.create', [
+            "installations" => $installations,
+            "produits" => Produit::all()
+        ]);
     }
 
     public function store()
     {
+        if(!request()->has("ajax")) return view('equipements.index');
+
         $data = request()->validate([
             'produit_id' => 'required',
             'installation_id' => 'required',
