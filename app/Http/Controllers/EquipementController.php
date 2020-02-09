@@ -55,8 +55,6 @@ class EquipementController extends Controller
 
     public function store()
     {
-        if(!request()->has("ajax")) return view('equipements.index');
-
         $data = request()->validate([
             'installation_id' => "required",
             'produit_id' => 'required',
@@ -73,14 +71,15 @@ class EquipementController extends Controller
            "hauteur" => '',
            "poids" => '',
            "rendement" => '',
-           "puissance_nominal" => '',
-           "tension_nominal" => '',
-           "tension_max" => '',
-           "courant_max" => '',
+           "puissance_nominale" => '',
+           "tension_nominale" => '',
+           "tension_maximale" => '',
+           "courant_maximal" => '',
            "tension_co" => '',
-           "courant_cc" => '',
+           "courant_court_circuit" => '',
            "tension_stockage" => '',
-           "capacite_stockage" => ''
+           "capacite_stockage" => '',
+            "type" => '',
         ]);
 
         $produitData = [
@@ -118,6 +117,8 @@ class EquipementController extends Controller
         {
             $equipementData["produit_id"] = $data["produit_id"];
         }
+
+
 
         switch ($data["equipement"])
         {
@@ -178,7 +179,7 @@ class EquipementController extends Controller
 
         if (!request()->request->has("ajax"))
         {
-            return redirect()->back();
+            return redirect()->route('equipements.index');
         } else
         {
             return response()->json([
@@ -187,8 +188,6 @@ class EquipementController extends Controller
                 "data" => $inserted
             ], 200);
         }
-
-
 
     }
 
@@ -244,6 +243,6 @@ class EquipementController extends Controller
     {
         $equipement->delete();
 
-        return redirect()->route('equipements.index');
+        return redirect()->route('home');
     }
 }
