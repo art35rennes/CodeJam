@@ -6,7 +6,7 @@
 
 @section('content')
 
-    <form class="form-data" id="batiment" method="POST" action="{{ route('batiments.store') }}">
+    <form class="form-data" method="POST" action="{{ route('installations.store') }}">
         @csrf
         <div class="form-row">
             <div class="col-6">

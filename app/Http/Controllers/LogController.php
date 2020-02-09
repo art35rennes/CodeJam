@@ -19,7 +19,7 @@ class LogController extends Controller
     }
 
     public function create($type) {
-        return $type == "batiment" ? view('logs.create.batiment') : view('logs.create.equipement');
+        return $type == "batiment" ? view('logs.create',['type'=>'batiment', "batiments" => auth()->user()->batiments]) : view('logs.create',['type'=>'equipement',"equipements"=>[]]);
     }
 
     public function store()

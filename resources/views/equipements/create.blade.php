@@ -164,6 +164,7 @@
             }else{
                 $("#ps_div").hide(100);
                 $("#cell_div").hide(100);
+                $("#equipement_div").show(100);
             }
 
         }
