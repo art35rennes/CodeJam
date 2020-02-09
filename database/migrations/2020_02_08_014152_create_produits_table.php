@@ -20,6 +20,7 @@ class CreateProduitsTable extends Migration
             $table->unique(['marque', 'reference'], 'signature');
             $table->float('longueur')->nullable();
             $table->float('largeur')->nullable();
+            $table->float('hauteur')->nullable();
             $table->float('profondeur')->nullable();
             $table->float('poids')->nullable();
             $table->float('rendement')->nullable();

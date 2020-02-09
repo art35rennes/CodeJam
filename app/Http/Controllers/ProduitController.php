@@ -35,11 +35,13 @@ class ProduitController extends Controller
 
         $inserted = null;
 
+
         try {
             $inserted = Produit::create($data);
         } catch (QueryException $e) {
             $errorCode = $e->errorInfo[1];
             if($errorCode == 1062){
+                $inserted = "catch";
                 return json_encode([
                     "message" => $e->getMessage(),
                     "table" => "produits",
