@@ -16,11 +16,13 @@
         </thead>
         <tbody>
         @foreach($installations as $installation)
+        <tr>
             <td>{{$installation->id}}</td>
             <td>{{$installation->nom}}</td>
             <td>{{$installation->batiment}}</td>
             <td>{{$installation->equipements}}</td>
             <td><i class="fas fa-search"></i></td>
+        </tr>
         @endforeach
         </tbody>
     </table>
