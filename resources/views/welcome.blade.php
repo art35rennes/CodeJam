@@ -167,7 +167,7 @@
                         </div>
                         <div class="col-10">
                             <h5 class="feature-title">Préservez la biodiversité chez vous</h5>
-                            <p class="grey-text">Nos outils d'analyse avancée sont capable de <span class="font-weight-bold">définir l'impact de vos équipements</span> sur la biodiversité locale et de <span class="font-weight-bold">vous proposer des solutions adaptées</span> à votre situation pour maintenir la biodversité dans votre environemment.</p>
+                            <p class="grey-text">Nos outils d'analyse avancés sont capables de <span class="font-weight-bold">définir l'impact de vos équipements</span> sur la biodiversité locale et de <span class="font-weight-bold">vous proposer des solutions adaptées</span> à votre situation pour maintenir la biodversité dans votre environemment.</p>
                         </div>
                     </div>
                     <!--/Third row-->
@@ -196,7 +196,7 @@
         <!--Section: Not enough-->
         <section>
 
-            <h2 class="my-5 h3 text-center">Fonctionnalité terminé</h2>
+            <h2 class="my-5 h3 text-center">Fonctionnalités terminées</h2>
 
             <!--First row-->
             <div class="row features-small mb-5 mt-3 wow fadeIn">
@@ -210,7 +210,7 @@
                         </div>
                         <div class="col-10">
                             <h6 class="feature-title">Système d'authenfication</h6>
-                            <p class="grey-text">Il est possible de se créer un compte puis de ce connecter.
+                            <p class="grey-text">Il est possible de se créer un compte puis de se connecter.
                             </p>
                             <div style="height:15px"></div>
                         </div>
@@ -237,8 +237,8 @@
                             <i class="fas fa-check-circle fa-2x indigo-text"></i>
                         </div>
                         <div class="col-10">
-                            <h6 class="feature-title">Dashbord</h6>
-                            <p class="grey-text">Une fois connecté vous avez accès via votre bouton de profil. Tout les graphiques sont fonctionnel et interactif. Les données affiché sont prédéfinie.</p>
+                            <h6 class="feature-title">Dashboard</h6>
+                            <p class="grey-text">Une fois connecté vous avez accès via votre bouton de profil. Tous les graphiques sont fonctionnels et interactifs. Les données affichées sont cependant pour l'instant prédéfinies.</p>
                             <div style="height:15px"></div>
                         </div>
                     </div>
@@ -251,7 +251,7 @@
                         </div>
                         <div class="col-10">
                             <h6 class="feature-title">Responsive</h6>
-                            <p class="grey-text">Le site est compatible PC, Smartphone et tablette.</p>
+                            <p class="grey-text">Le site est compatible PC, smartphones et tablettes.</p>
                             <div style="height:15px"></div>
                         </div>
                     </div>
@@ -275,7 +275,7 @@
                         </div>
                         <div class="col-10">
                             <h6 class="feature-title">Base de données</h6>
-                            <p class="grey-text">La base implementé est cohérente avec une utilisation en production du service.
+                            <p class="grey-text">La base implementée est cohérente avec une utilisation en production du service.
                             </p>
                             <div style="height:15px"></div>
                         </div>
@@ -289,7 +289,7 @@
                         </div>
                         <div class="col-10">
                             <h6 class="feature-title">BackOffice fonctionnel</h6>
-                            <p class="grey-text">Même si parfois le Front ne reflète pas les données en bases, le Backoffice est quand à lui bien fonctionnel ! <br><small>(INSERT, DELETE, UPDATE, GET)</small></p>
+                            <p class="grey-text">Même si parfois le front ne reflète pas les données en bases, le backoffice est quand à lui bien fonctionnel ! <br><small>(INSERT, DELETE, UPDATE, GET)</small></p>
                             <div style="height:15px"></div>
                         </div>
                     </div>
@@ -302,7 +302,7 @@
                         </div>
                         <div class="col-10">
                             <h6 class="feature-title">CRUD</h6>
-                            <p class="grey-text">Toute les tables peuvent être peuplé et visualisé via different formulaire personalisé pour prendre en compte les relations et faciliter le Mass Assignement.
+                            <p class="grey-text">Toutes les tables peuvent être peuplées et visualisées via differents formulaires personalisés pour prendre en compte les relations et faciliter le Mass Assignement.
                             </p>
                             <div style="height:15px"></div>
                         </div>
@@ -316,7 +316,7 @@
                         </div>
                         <div class="col-10">
                             <h6 class="feature-title">Ergonomique</h6>
-                            <p class="grey-text">Malgré les 48h pour réaliser ce projet nous avons fais au mieux pour concevoir des interfaces clair, fluide et user-friendly.</p>
+                            <p class="grey-text">Malgré les 48h pour réaliser ce projet nous avons fais au mieux pour concevoir des interfaces claires, fluides et user-friendly.</p>
                             <div style="height:15px"></div>
                         </div>
                     </div>
@@ -349,7 +349,7 @@
                         </div>
                         <div class="col-10 mb-2 pl-3">
                             <h5 class="feature-title font-bold mb-1">Télécharger les sources</h5>
-                            <p class="grey-text mt-2">Récupérer les sources présente sur le dépot FTP où GitHub.
+                            <p class="grey-text mt-2">Récupérer les sources présentes sur le dépot FTP où GitHub (voir lien dans la barre de menus).
                             </p>
                         </div>
                     </div>
@@ -366,7 +366,7 @@
                         </div>
                         <div class="col-10 mb-2">
                             <h5 class="feature-title font-bold mb-1">Configurer la base de données</h5>
-                            <p class="grey-text mt-2">Le site necessite une base de données MySQL 5.7. Généré la base en important le fichier <small>earthquake.sql</small><br>Si la base n'est pas local, modifier le fichier <small>.env</small>
+                            <p class="grey-text mt-2">Le site necessite une base de données MySQL 5.7. Générer la base en important le fichier <small>earthquake.sql</small><br>Si la base n'est pas locale, modifier le fichier <small>.env</small>
                             </p>
                         </div>
                     </div>
@@ -383,7 +383,7 @@
                         </div>
                         <div class="col-10 mb-2">
                             <h5 class="feature-title font-bold mb-1">Ajouter un user à la base</h5>
-                            <p class="grey-text mt-2">Ajouter un utilisateur a votre base données qui à tout les droits sur <small>codejam</small>.<br><small>User: codejam</small><br><small>Password: jloZEozLRDczAlbR</small>
+                            <p class="grey-text mt-2">Ajouter un utilisateur a votre base données qui à tous les droits sur <small>codejam</small>.<br><small>User: codejam</small><br><small>Password: jloZEozLRDczAlbR</small>
                             </p>
                         </div>
                     </div>
