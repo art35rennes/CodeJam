@@ -46,16 +46,13 @@ class InstallationController extends Controller
 
     public function store(Batiment $batiment)
     {
-        if(!request()->has("ajax")) return view('installations.index');
+        $data = request()->validate([
+            'nom' => 'required',
+            'description' => ''
+        ]);
+        $inserted = null;
 
         if(!(Batiment::find($batiment)->isEmpty())) {
-            $data = request()->validate([
-                'nom' => 'required',
-                'description' => ''
-            ]);
-
-            $inserted = null;
-
             try {
                 $inserted = $batiment->installations()->create($data);
             } catch (QueryException $e) {
@@ -68,18 +65,10 @@ class InstallationController extends Controller
                     ]);
                 }
             }
-
-            return view('installations.index');
-        } else {
-
-            $data = request()->validate([
-                'nom' => 'required',
-                'description' => ''
-            ]);
-
-            $inserted = null;
-
-            try {
+        } else
+        {
+            try
+            {
                 $inserted = auth()->user()->dernierBatiment->installations()->create($data);
             } catch (QueryException $e) {
                 $errorCode = $e->errorInfo[1];
@@ -91,7 +80,13 @@ class InstallationController extends Controller
                     ]);
                 }
             }
+        }
 
+        if (!request()->request->has("ajax"))
+        {
+            return redirect()->back();
+        } else
+        {
             return response()->json([
                 "success" => true,
                 "table" => "installations",

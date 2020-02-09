@@ -28,8 +28,6 @@ class BatimentController extends Controller
     public function store()
     {
 
-        if(!request()->has("ajax")) return view('batiment.index');
-
         $data = request()->validate([
             'nom' => 'required',
             'description' => '',
@@ -39,18 +37,23 @@ class BatimentController extends Controller
 
         $inserted = auth()->user()->batiments()->create($data);
 
-        if($inserted) {
-            return response()->json([
-                "success" => true,
-                "table" => "batiments",
-                "data" =>$inserted
-            ], 200);
-        } else {
-            return response()->json([
-                "success" => false,
-                "table" => "batiments",
-                "data" => $inserted
-            ], 500);
+        if(!request()->request->has("ajax")) {
+            return redirect()->back();
+        } else
+        {
+            if($inserted) {
+                return response()->json([
+                    "success" => true,
+                    "table" => "batiments",
+                    "data" =>$inserted
+                ], 200);
+            } else {
+                return response()->json([
+                    "success" => false,
+                    "table" => "batiments",
+                    "data" => $inserted
+                ], 500);
+            }
         }
     }
 

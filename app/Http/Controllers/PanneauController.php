@@ -21,7 +21,6 @@ class PanneauController extends Controller
 
     public function store()
     {
-        if(!request()->has("ajax")) return view('panneaux.index');
 
         $data = request()->validate([
             'produit_id' => 'required',
@@ -33,7 +32,6 @@ class PanneauController extends Controller
         ]);
 
         $inserted = null;
-
         try {
             $inserted = Panneau::create($data);
         } catch (QueryException $e) {
@@ -47,11 +45,17 @@ class PanneauController extends Controller
             }
         }
 
-        return response()->json([
-            "success" => true,
-            "table" => "panneaux",
-            "data" => $inserted
-        ], 200);
+        if (!request()->request->has("ajax"))
+        {
+            return redirect()->back();
+        } else
+        {
+            return response()->json([
+                "success" => true,
+                "table" => "panneaux",
+                "data" => $inserted
+            ], 200);
+        }
     }
 
     public function show(Panneau $panneau)

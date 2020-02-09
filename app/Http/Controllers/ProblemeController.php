@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Probleme;
+use Illuminate\Database\QueryException;
 
 class ProblemeController extends Controller
 {
@@ -19,8 +20,6 @@ class ProblemeController extends Controller
 
     public function store()
     {
-        if(!request()->has("ajax")) return view('problemes.index');
-
         $data = request()->validate([
             'nom' => 'required',
             'description' => '',
@@ -28,11 +27,31 @@ class ProblemeController extends Controller
             'media' => ''
         ]);
 
-        dd($data);
+        $inserted = null;
+        try {
+            $inserted = Probleme::create($data);
+        } catch (QueryException $e) {
+            $errorCode = $e->errorInfo[1];
+            if($errorCode == 1062){
+                return json_encode([
+                    "message" => $e->getMessage(),
+                    "table" => "panneaux",
+                    "data" => $inserted
+                ]);
+            }
+        }
 
-        Probleme::create($data);
-
-        return view('problemes.index');
+        if (!request()->request->has("ajax"))
+        {
+            return redirect()->back();
+        } else
+        {
+            return response()->json([
+                "success" => true,
+                "table" => "problemes",
+                "data" => $inserted
+            ], 200);
+        }
     }
 
     public function show(Probleme $probleme)
