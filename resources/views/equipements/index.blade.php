@@ -26,6 +26,6 @@
         </tbody>
     </table>
 
-    <a class="btn blue-gradient" href="{{ route("installations.create") }}">Ajouter un equipement</a>
+    <a class="btn blue-gradient" href="{{ route("equipements.create") }}">Ajouter un equipement</a>
 
 @endsection

@@ -7,10 +7,11 @@
 @section('content')
     <div class="md-form form-row">
         <select id="model" class="mr-2 mdb-select md-form" searchable="Rechercher ici..">
-            <option value="0" disabled selected>Choisissez un modéle</option>
-            <option value="1">Marque - Référence</option>
-            <option value="2">Marq - Réfce</option>>
+            <option value="0" disabled selected>Choisissez un produit</option>
+            @foreach($produits as $produit)
+            <option value="{{$produit->id}}">{{$produit->marque}} - {{$produit->reference}}</option>
             <option value="-1">Autre...</option>
+            @endforeach
         </select>
         <div id="type_table">
             <select id="type_table_select" class="mdb-select md-form" searchable="Rechercher ici..">
@@ -131,4 +132,26 @@
             </select>
         </div>
     </div>
+@endsection
+
+@section('js')
+<script>
+    $('#type_table_select').change(function () {
+        $(this).val()>=0?$("#equipement_div, #modele_div").show(100):null;
+        if($(this).val()==="1") {
+            $("#ps_div").show(100);
+            $("#cell_div").hide(100);
+        }else{
+            $("#ps_div").hide(100);
+            $("#cell_div").show(100);
+        }
+    });
+    $('#model').change(function () {
+        if($(this).val()==="-1") {
+            $("#modele_div").show(100);
+        }else{
+            $("#ps_div").hide(100);
+        }
+    });
+</script>
 @endsection
