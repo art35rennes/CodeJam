@@ -87,9 +87,9 @@
 
                     <!-- Main heading -->
                     <h3 class="h3 mb-3">Laravel / MDBootstrap</h3>
-                    <p>Le design du site a été dévellopé au tour du framework CSS <strong>MDB</strong> afin de garantir un responsive design à toute épreuve ainsi qu'un style moderne et agréable.</p>
-                    <p>Le framework garantit aussi une compatibilité avec tout les navigateurs quelque soit le système hôte.</p>
-                    <p>Le backoffice est quand à lui assuré pas <strong>Laravel 6.13</strong> pour controler au mieux les accès aux site, le MVC et bien d'autre chose encore...</p>
+                    <p>Le design du site a été développé autour du framework CSS <strong>MDB</strong> afin de garantir un responsive design à toute épreuve ainsi qu'un style moderne et agréable.</p>
+                    <p>Le framework garantit aussi une compatibilité avec tout les navigateurs quel que soit le système hôte.</p>
+                    <p>Le backoffice est quand à lui assuré par <strong>Laravel 6.13</strong> pour contrôler au mieux les accès au site, le MVC et bien plus encore...</p>
                     <!-- Main heading -->
 
                     <hr>
