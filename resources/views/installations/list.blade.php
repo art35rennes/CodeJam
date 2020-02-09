@@ -21,7 +21,7 @@
             <td>{{$installation->nom}}</td>
             <td>{{$installation->batiment}}</td>
             <td>{{$installation->equipements}}</td>
-            <td><a href="{{route('batiments.show', ['batiment'=>1, 'installation'=>1])}}"><i class="fas fa-search"></i></a></td>
+            <td><a href="{{route('installations.show', ['batiment'=>1, 'installation'=>1])}}"><i class="fas fa-search"></i></a></td>
         </tr>
         @endforeach
         </tbody>
